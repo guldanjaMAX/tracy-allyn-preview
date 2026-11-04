@@ -119,7 +119,7 @@ html.menu-open{overflow:hidden}.site-menu{position:fixed;inset:0 0 0 auto;margin
 <body>
 <a class="skip-link" href="#main-copy">Skip to content</a>
 <main><section class="hero" aria-labelledby="hero-heading">
-<picture><source media="(max-width:700px)" srcset="assets/videos/05-wild-and-rooted-mobile.jpg"><img class="poster" id="poster" src="assets/videos/05-wild-and-rooted.jpg" alt="" fetchpriority="high"></picture>
+<picture><source media="(max-width:700px)" srcset="assets/videos/wild-and-rooted-mobile-whitened-v1.jpg"><img class="poster" id="poster" src="assets/videos/wild-and-rooted-desktop-whitened-v1.jpg" alt="" fetchpriority="high"></picture>
 <video class="film" id="hero-video" muted playsinline loop preload="metadata" aria-hidden="true"></video><div class="shade" aria-hidden="true"></div>
 <header class="hero-header"><a class="brand" href="#main-copy" aria-label="Tracy Allyn home"><span class="brand-signature" aria-hidden="true"></span></a><button class="menu-toggle" id="menu-toggle" type="button" aria-haspopup="dialog" aria-controls="site-menu" aria-expanded="false"><span>Menu</span><span class="menu-lines" aria-hidden="true"><i></i><i></i></span></button></header>
 <div class="hero-copy" id="main-copy" tabindex="-1"><h1 id="hero-heading" aria-label="What type of lover are you?"><span class="question-top">What type of</span><span class="living-word" aria-hidden="true"><span>l</span><span class="living-o">o</span><span>v</span><span>e</span><span>r</span></span><span class="question-bottom">are you<span class="question-mark">?</span></span></h1><p class="sub">Explore how you connect, what you want more of, and where to begin.</p><div class="actions"><a class="cta primary" id="quiz-open" href="quiz-preview.html">Discover my type<svg class="cta-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="cta" href="mailto:tracy@tracy-allyn.com?subject=Speaking%20inquiry">Book Tracy to speak</a></div></div>
@@ -137,7 +137,7 @@ var deviceQuery=window.matchMedia('(max-width:700px)');
 var reducedQuery=window.matchMedia('(prefers-reduced-motion:reduce)');
 var wantsMotion=!reducedQuery.matches;
 var sourceVersion=0;
-var sources={desktop:{film:'assets/videos/wild-and-rooted-desktop-veo31.mp4',poster:'assets/videos/05-wild-and-rooted.jpg'},phone:{film:'assets/videos/wild-and-rooted-mobile-veo31.mp4',poster:'assets/videos/05-wild-and-rooted-mobile.jpg'}};
+var sources={desktop:{film:'assets/videos/wild-and-rooted-desktop-whitened-v1.mp4',poster:'assets/videos/wild-and-rooted-desktop-whitened-v1.jpg'},phone:{film:'assets/videos/wild-and-rooted-mobile-whitened-v1.mp4',poster:'assets/videos/wild-and-rooted-mobile-whitened-v1.jpg'}};
 video.muted=true;video.defaultMuted=true;video.playsInline=true;video.loop=true;
 function showPoster(message){video.classList.remove('is-visible');if(message)status.textContent=message}
 function play(){if(!wantsMotion||document.hidden)return;var thisVersion=sourceVersion;var result=video.play();if(result&&result.catch){result.catch(function(){if(thisVersion!==sourceVersion||document.hidden)return;wantsMotion=false;showPoster('The still portrait is shown because autoplay is unavailable.')})}}
