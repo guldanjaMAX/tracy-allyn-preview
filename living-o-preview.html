@@ -110,6 +110,9 @@ html.menu-open{overflow:hidden}.site-menu{position:fixed;inset:0 0 0 auto;margin
 .menu-inner{padding-top:24px;padding-bottom:28px}.menu-nav{padding:24px 0}.menu-nav a,.menu-nav button{font-size:28px;padding:14px 0}.menu-nav>:first-child{border-top:1px solid rgba(212,183,157,.22)}.menu-footer{min-height:60px}
 @media(max-width:700px){.menu-inner{padding-top:17px;padding-bottom:25px}.menu-nav{padding:16px 0}.menu-nav a,.menu-nav button{font-size:26px;padding:14px 0}}
 @media(max-width:700px) and (max-height:740px){.menu-nav a,.menu-nav button{font-size:24px;padding:12px 0}}
+/* Quiet glass navigation keeps the portrait as the focal point. */
+.menu-toggle{min-width:102px;height:44px;padding:0 16px;gap:14px;background:transparent;border-color:rgba(244,239,238,.25);box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;color:rgba(244,239,238,.85);letter-spacing:.1em;font-weight:400}.menu-lines i{background:rgba(244,239,238,.72)}.menu-toggle:hover{background:rgba(46,16,43,.16);border-color:rgba(244,239,238,.5);box-shadow:none}.site-menu{background:rgba(46,16,43,.56);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);border-left-color:rgba(244,239,238,.14);box-shadow:-14px 0 60px rgba(46,16,43,.16)}.site-menu::backdrop{background:rgba(46,16,43,.14);backdrop-filter:none;-webkit-backdrop-filter:none}.menu-inner{background:linear-gradient(90deg,rgba(46,16,43,.24),rgba(46,16,43,.05))}.menu-orbit{opacity:.35;box-shadow:none}.menu-nav a,.menu-nav button{text-shadow:0 1px 8px rgba(46,16,43,.4)}
+@media(max-width:700px){.menu-toggle{min-width:88px;height:44px;padding:0 13px;gap:11px}}
 
 </style>
 </head>
@@ -140,11 +143,11 @@ var sourceVersion=0;
 var sources={desktop:{film:'assets/videos/wild-and-rooted-desktop-veo31.mp4',poster:'assets/videos/05-wild-and-rooted.jpg'},phone:{film:'assets/videos/wild-and-rooted-mobile-veo31.mp4',poster:'assets/videos/05-wild-and-rooted-mobile.jpg'}};
 video.muted=true;video.defaultMuted=true;video.playsInline=true;video.loop=true;
 function showPoster(message){video.classList.remove('is-visible');if(message)status.textContent=message}
-function play(){if(!wantsMotion||dialog.open||menuDialog.open||document.hidden)return;var thisVersion=sourceVersion;var result=video.play();if(result&&result.catch){result.catch(function(){if(thisVersion!==sourceVersion||dialog.open||menuDialog.open||document.hidden)return;wantsMotion=false;showPoster('The still portrait is shown because autoplay is unavailable.')})}}
+function play(){if(!wantsMotion||dialog.open||document.hidden)return;var thisVersion=sourceVersion;var result=video.play();if(result&&result.catch){result.catch(function(){if(thisVersion!==sourceVersion||dialog.open||document.hidden)return;wantsMotion=false;showPoster('The still portrait is shown because autoplay is unavailable.')})}}
 function loadSource(){sourceVersion+=1;video.pause();video.classList.remove('is-visible');var source=deviceQuery.matches?sources.phone:sources.desktop;video.poster=source.poster;video.src=source.film;video.load();if(wantsMotion)play();else status.textContent=reducedQuery.matches?'Reduced motion is enabled. The still portrait is shown.':'Video paused.'}
-video.addEventListener('playing',function(){if(!wantsMotion||dialog.open||menuDialog.open||document.hidden){video.pause();return}video.classList.add('is-visible');status.textContent='Background video playing.'});
+video.addEventListener('playing',function(){if(!wantsMotion||dialog.open||document.hidden){video.pause();return}video.classList.add('is-visible');status.textContent='Background video playing.'});
 video.addEventListener('error',function(){wantsMotion=false;showPoster('The still portrait is shown because the video is unavailable.')});
-menuToggle.addEventListener('click',function(){video.pause();menuDialog.showModal();menuToggle.setAttribute('aria-expanded','true');document.documentElement.classList.add('menu-open')});
+menuToggle.addEventListener('click',function(){menuDialog.showModal();menuToggle.setAttribute('aria-expanded','true');document.documentElement.classList.add('menu-open')});
 document.getElementById('menu-close').addEventListener('click',function(){menuDialog.close()});
 menuDialog.addEventListener('close',function(){menuToggle.setAttribute('aria-expanded','false');document.documentElement.classList.remove('menu-open');menuToggle.focus();play()});
 menuDialog.addEventListener('click',function(event){if(event.target===menuDialog){var box=menuDialog.getBoundingClientRect();if(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom)menuDialog.close()}});
