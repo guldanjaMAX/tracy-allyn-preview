@@ -14,7 +14,7 @@ A single above-the-fold presentation for review. The homepage copy remains marke
 
 The quiz button opens a clearly labeled preview dialog. Connect the approved quiz URL when available. No quiz answers, scoring, email collection, or analytics are implemented. The speaking button opens an email to tracy@tracy-allyn.com with the subject Speaking inquiry.
 
-Background motion has a visible pause control. Reduced motion starts with the still poster. Opening the quiz dialog or switching away from the page pauses playback; closing or returning resumes only when motion was enabled.
+Background video autoplays muted and loops, without a visible playback control. Reduced motion starts on the still poster and remains static. Opening the quiz dialog or switching away from the page pauses playback; closing or returning resumes only when motion was enabled. Failed autoplay or a media error leaves the poster visible.
 
 ## Review before launch
 
