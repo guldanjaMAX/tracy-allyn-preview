@@ -1,5 +1,9 @@
 # Tracy Allyn homepage preview
 
+Live review: https://guldanjaMAX.github.io/tracy-allyn-preview/
+
+This is a publicly accessible presentation preview. The final site is not launched.
+
 A single above-the-fold presentation for review. The homepage copy remains marked DRAFT. This is a preview, with search indexing discouraged through robots metadata and robots.txt.
 
 ## Contents
@@ -8,7 +12,8 @@ A single above-the-fold presentation for review. The homepage copy remains marke
 - Native horizontal and vertical Veo 3.1 films, with poster fallback.
 - The selected handwritten signature, preserved unchanged and displayed in Petal.
 - The realistic fireball favicon in PNG and ICO formats.
-- Manrope headlines and Figtree body text, loaded from Google Fonts.
+- Copper and gold quiz button with an ember glow, and an ember outline speaking button.
+- Bricolage Grotesque 500 headlines and Figtree body text, embedded for offline viewing.
 
 ## Interactions
 
