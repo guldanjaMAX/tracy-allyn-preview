@@ -1,26 +1,44 @@
-# Tracy Allyn homepage preview
+# Tracy Allyn review
 
-Live review: https://guldanjaMAX.github.io/tracy-allyn-preview/
+This repository holds the homepage preview and actual Veo 3.1 animated headline
+studies. James authorized publishing this curated presentation through
+GitHub Pages. It is a draft review, not the final launched client website.
 
-This is a publicly accessible presentation preview. The final site is not launched.
+**Live homepage:** https://guldanjaMAX.github.io/tracy-allyn-preview/
 
-A single above-the-fold presentation for review. The homepage copy remains marked DRAFT. This is a preview, with search indexing discouraged through robots metadata and robots.txt.
+**Animated headline review:** https://guldanjaMAX.github.io/tracy-allyn-preview/veo-lover-review.html
 
-## Contents
+## Open the review
 
-- One HTML file with embedded CSS and JavaScript.
-- Native horizontal and vertical Veo 3.1 films, with poster fallback.
-- The selected handwritten signature, preserved unchanged and displayed in Petal.
-- The realistic fireball favicon in PNG and ICO formats.
-- Copper and gold quiz button with an ember glow, and an ember outline speaking button.
-- Bricolage Grotesque 500 headlines and Figtree body text, embedded for offline viewing.
+Download the repository with **Code → Download ZIP**, extract it, then open
+`veo-lover-review.html` in a desktop browser. Keep the assets folder beside it.
+Open `index.html` for the original homepage preview.
 
-## Interactions
+The review leads with a complete animated headline and subheadline. It also
+includes three earlier eight-second silent word-only explorations:
 
-The quiz button opens a clearly labeled preview dialog. Connect the approved quiz URL when available. No quiz answers, scoring, email collection, or analytics are implemented. The speaking button opens an email to tracy@tracy-allyn.com with the subject Speaking inquiry.
+- **Fire formed:** the word is made of fire.
+- **Inner flame:** real flames move through solid rounded letters.
+- **Ember edge:** fire traces the outside of clear letter faces.
 
-Background video autoplays muted and loops, without a visible playback control. Reduced motion starts on the still poster and remains static. Opening the quiz dialog or switching away from the page pauses playback; closing or returning resumes only when motion was enabled. Failed autoplay or a media error leaves the poster visible.
+The word-only preview composites its clips over Plum or Tracy's portrait. Those
+source videos have black backgrounds. The overlay uses screen compositing, not
+native video transparency. Loop seams and the final typography choice remain for
+review.
 
-## Review before launch
+## Sharing
 
-Confirm the final quiz destination, copy, signature, moving likeness, and video loop transition. This preview is not the final full website. No interview transcripts, private research, credentials, or generation receipts are included.
+The live links above work without a GitHub account. A downloaded and extracted
+copy can also be sent directly to Tracy. James has a smaller portable
+`Tracy-Allyn-review.zip` package locally, with the homepage at `index.html` and
+the headline review at `veo-lover-review.html`.
+
+## Preview behavior
+
+The homepage uses the selected handwritten signature, fireball favicon, and
+horizontal or vertical Tracy video. The homepage has no visible video pause
+button. The quiz button opens a labeled preview; the speaking button opens an
+email to Tracy. Authored review copy is marked DRAFT.
+
+Only presentation files and media are included. No private brief, interview
+transcripts, research notes, credentials, or generation receipts are stored here.
