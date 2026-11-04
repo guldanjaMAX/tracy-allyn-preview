@@ -114,46 +114,21 @@ html.menu-open{overflow:hidden}.site-menu{position:fixed;inset:0 0 0 auto;margin
 .menu-toggle{min-width:102px;height:44px;padding:0 16px;gap:14px;background:transparent;border-color:rgba(244,239,238,.25);box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;color:rgba(244,239,238,.85);letter-spacing:.1em;font-weight:400}.menu-lines i{background:rgba(244,239,238,.72)}.menu-toggle:hover{background:rgba(46,16,43,.16);border-color:rgba(244,239,238,.5);box-shadow:none}.site-menu{background:rgba(46,16,43,.56);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);border-left-color:rgba(244,239,238,.14);box-shadow:-14px 0 60px rgba(46,16,43,.16)}.site-menu::backdrop{background:rgba(46,16,43,.14);backdrop-filter:none;-webkit-backdrop-filter:none}.menu-inner{background:linear-gradient(90deg,rgba(46,16,43,.24),rgba(46,16,43,.05))}.menu-orbit{opacity:.35;box-shadow:none}.menu-nav a,.menu-nav button{text-shadow:0 1px 8px rgba(46,16,43,.4)}
 @media(max-width:700px){.menu-toggle{min-width:88px;height:44px;padding:0 13px;gap:11px}}
 
+
+.video-start{position:absolute;top:106px;right:5%;z-index:2;padding:10px 16px;min-height:44px;border:1px solid rgba(244,239,238,.5);border-radius:24px;background:rgba(46,16,43,.5);color:var(--petal);font:400 12px Figtree,Arial,sans-serif;cursor:pointer}.video-start[hidden]{display:none}.video-start:focus-visible{outline:2px solid var(--hazelnut);outline-offset:4px}@media(max-width:700px){.video-start{top:80px;right:6%;padding:8px 14px}}
 </style>
 </head>
 <body>
 <a class="skip-link" href="#main-copy">Skip to content</a>
 <main><section class="hero" aria-labelledby="hero-heading">
 <picture><source media="(max-width:700px)" srcset="assets/videos/wild-and-rooted-mobile-whitened-v1.jpg"><img class="poster" id="poster" src="assets/videos/wild-and-rooted-desktop-whitened-v1.jpg" alt="" fetchpriority="high"></picture>
-<video class="film" id="hero-video" muted playsinline loop preload="metadata" aria-hidden="true"></video><div class="shade" aria-hidden="true"></div>
+<video class="film" id="hero-video" autoplay muted playsinline loop preload="auto" aria-hidden="true"></video><div class="shade" aria-hidden="true"></div>
 <header class="hero-header"><a class="brand" href="#main-copy" aria-label="Tracy Allyn home"><span class="brand-signature" aria-hidden="true"></span></a><button class="menu-toggle" id="menu-toggle" type="button" aria-haspopup="dialog" aria-controls="site-menu" aria-expanded="false"><span>Menu</span><span class="menu-lines" aria-hidden="true"><i></i><i></i></span></button></header>
 <div class="hero-copy" id="main-copy" tabindex="-1"><h1 id="hero-heading" aria-label="What type of lover are you?"><span class="question-top">What type of</span><span class="living-word" aria-hidden="true"><span>l</span><span class="living-o">o</span><span>v</span><span>e</span><span>r</span></span><span class="question-bottom">are you<span class="question-mark">?</span></span></h1><p class="sub">Explore how you connect, what you want more of, and where to begin.</p><div class="actions"><a class="cta primary" id="quiz-open" href="quiz-preview.html">Discover my type<svg class="cta-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="cta" href="mailto:tracy@tracy-allyn.com?subject=Speaking%20inquiry">Book Tracy to speak</a></div></div>
+<button class="video-start" id="video-start" type="button" aria-controls="hero-video" hidden>Play video</button>
 <span id="motion-status" class="sr-only" aria-live="polite"></span>
 </section></main>
 <dialog class="site-menu" id="site-menu" aria-labelledby="menu-title"><div class="menu-inner"><div class="menu-header"><a class="menu-brand" href="#main-copy" data-menu-home aria-label="Tracy Allyn home"><span class="brand-signature" aria-hidden="true"></span></a><button class="menu-close" id="menu-close" aria-label="Close menu" type="button"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.3"/></svg></button></div><h2 id="menu-title" class="sr-only">Explore Tracy Allyn</h2><nav class="menu-nav" aria-label="Main navigation"><a id="menu-quiz" href="quiz-preview.html"><span>Take the quiz</span><span class="menu-link-arrow" aria-hidden="true">↗</span></a><a href="https://tracy-allyn.com/about"><span>About</span><span class="menu-link-arrow" aria-hidden="true">↗</span></a><a href="mailto:tracy@tracy-allyn.com?subject=Speaking%20inquiry"><span>Book Tracy to speak</span><span class="menu-link-arrow" aria-hidden="true">↗</span></a><a href="https://tracy-allyn.com/sessions"><span>Work with me</span><span class="menu-link-arrow" aria-hidden="true">↗</span></a><a href="https://tracyallyn.substack.com/"><span>Writing &amp; media</span><span class="menu-link-arrow" aria-hidden="true">↗</span></a><a href="https://tracy-allyn.com/contact"><span>Contact</span><span class="menu-link-arrow" aria-hidden="true">↗</span></a></nav><div class="menu-footer"><a href="mailto:tracy@tracy-allyn.com">tracy@tracy-allyn.com</a><span class="menu-orbit" aria-hidden="true"></span></div></div></dialog>
-<script>
-(function(){
-'use strict';
-var video=document.getElementById('hero-video');
-var status=document.getElementById('motion-status');
-var menuDialog=document.getElementById('site-menu');
-var menuToggle=document.getElementById('menu-toggle');
-var deviceQuery=window.matchMedia('(max-width:700px)');
-var reducedQuery=window.matchMedia('(prefers-reduced-motion:reduce)');
-var wantsMotion=!reducedQuery.matches;
-var sourceVersion=0;
-var sources={desktop:{film:'assets/videos/wild-and-rooted-desktop-whitened-v1.mp4',poster:'assets/videos/wild-and-rooted-desktop-whitened-v1.jpg'},phone:{film:'assets/videos/wild-and-rooted-mobile-whitened-v1.mp4',poster:'assets/videos/wild-and-rooted-mobile-whitened-v1.jpg'}};
-video.muted=true;video.defaultMuted=true;video.playsInline=true;video.loop=true;
-function showPoster(message){video.classList.remove('is-visible');if(message)status.textContent=message}
-function play(){if(!wantsMotion||document.hidden)return;var thisVersion=sourceVersion;var result=video.play();if(result&&result.catch){result.catch(function(){if(thisVersion!==sourceVersion||document.hidden)return;wantsMotion=false;showPoster('The still portrait is shown because autoplay is unavailable.')})}}
-function loadSource(){sourceVersion+=1;video.pause();video.classList.remove('is-visible');var source=deviceQuery.matches?sources.phone:sources.desktop;video.poster=source.poster;video.src=source.film;video.load();if(wantsMotion)play();else status.textContent=reducedQuery.matches?'Reduced motion is enabled. The still portrait is shown.':'Video paused.'}
-video.addEventListener('playing',function(){if(!wantsMotion||document.hidden){video.pause();return}video.classList.add('is-visible');status.textContent='Background video playing.'});
-video.addEventListener('error',function(){wantsMotion=false;showPoster('The still portrait is shown because the video is unavailable.')});
-menuToggle.addEventListener('click',function(){menuDialog.showModal();menuToggle.setAttribute('aria-expanded','true');document.documentElement.classList.add('menu-open')});
-document.getElementById('menu-close').addEventListener('click',function(){menuDialog.close()});
-menuDialog.addEventListener('close',function(){menuToggle.setAttribute('aria-expanded','false');document.documentElement.classList.remove('menu-open');menuToggle.focus();play()});
-menuDialog.addEventListener('click',function(event){if(event.target===menuDialog){var box=menuDialog.getBoundingClientRect();if(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom)menuDialog.close()}});
-menuDialog.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){menuDialog.close();if(link.hasAttribute('data-menu-home'))requestAnimationFrame(function(){document.getElementById('main-copy').focus()})})});
-document.addEventListener('visibilitychange',function(){if(document.hidden)video.pause();else play()});
-function reducedChanged(event){if(event.matches){wantsMotion=false;video.pause();showPoster('Reduced motion is enabled. The still portrait is shown.')}}
-if(deviceQuery.addEventListener){deviceQuery.addEventListener('change',loadSource);reducedQuery.addEventListener('change',reducedChanged)}else{deviceQuery.addListener(loadSource);reducedQuery.addListener(reducedChanged)}
-loadSource();
-})();
-</script>
+<script src="assets/js/living-o-hero.js"></script>
 </body>
 </html>
