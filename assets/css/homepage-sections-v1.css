@@ -1,0 +1,84 @@
+/* Approved Speaking 4A and Writing 5A. All rules stay below the existing hero. */
+.homepage-sections {
+  container: home / inline-size;
+  width: 100%;
+  min-width: 0;
+  --heading: Quicksand, Arial, sans-serif;
+  --body: Figtree, Arial, sans-serif;
+  --plum: #2e102b;
+  --petal: #f4efee;
+  font: 400 15px/1.55 var(--body);
+  background: var(--plum);
+}
+.homepage-sections .hp-section { position: relative; isolation: isolate; overflow: clip; --hp-back: #2e102b; --hp-ink: #f4efee; --hp-muted: #d4b79d; background: var(--hp-back); color: var(--hp-ink); }
+.homepage-sections .theme-light { --hp-back: #f4efee; --hp-ink: #2e102b; --hp-muted: #702132; }
+.homepage-sections img { max-width: 100%; }
+.homepage-sections .hp-bg { position: absolute; inset: 0; z-index: -1; overflow: hidden; background: var(--hp-back); }
+.homepage-sections .hp-bg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.homepage-sections .hp-bg::after { content: ''; position: absolute; inset: 0; background: rgba(34,12,30,.72); }
+.homepage-sections .theme-light > .hp-bg::after { background: rgba(249,243,237,.75); }
+.homepage-sections .hp-speaking-0 > .hp-bg::after { background: linear-gradient(90deg,rgba(28,9,25,.26),rgba(28,9,25,.08)); }
+.homepage-sections .hp-speaking-0 > .hp-bg img { object-position: 62% 32% !important; }
+.homepage-sections .hp-inner { position: relative; z-index: 1; margin-left: auto; margin-right: auto; }
+.homepage-sections .hp-title { font: 500 clamp(40px,4.8cqi,68px)/1.13 var(--heading); letter-spacing: -.045em; margin: 0 0 25px; max-width: 19ch; text-wrap: balance; overflow-wrap: break-word; }
+.homepage-sections .hp-copy { font: 400 19px/1.8 var(--body); max-width: 48ch; margin: 0; opacity: .9; }
+.homepage-sections .hp-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 18px 28px; margin-top: 30px; }
+.homepage-sections .hp-button { display: inline-flex; align-items: center; justify-content: center; gap: 25px; min-height: 50px; font: 400 13px/1.5 var(--body); text-decoration: none; padding: 14px 22px; border: 1px solid var(--hp-muted); background: var(--hp-muted); color: var(--hp-back); }
+.homepage-sections .theme-light .hp-button { background: var(--plum); color: var(--petal); border-color: var(--plum); }
+.homepage-sections a:focus-visible { outline: 3px solid #cb7e3a; outline-offset: 5px; }
+
+.homepage-sections .hp-b-stage { min-height: 760px; display: flex; align-items: center; padding: 90px 7% 130px; }
+.homepage-sections .hp-b-stage-copy { width: min(42%,520px); padding: 42px 36px; background: rgba(35,12,32,.92); color: #f4efee; border: 1px solid rgba(244,239,238,.19); }
+.homepage-sections .hp-b-stage-copy .hp-title { max-width: 13ch; font-size: clamp(36px,4.4cqi,62px); }
+.homepage-sections .hp-b-stage-copy .hp-copy { color: #eee2e7; font-size: 17px; line-height: 1.75; }
+.homepage-sections .hp-b-stage-copy .hp-button { background: #d4b79d; color: #2e102b; border-color: #d4b79d; }
+
+.homepage-sections .hp-b-writing-grid { padding: 90px 6%; min-height: 710px; }
+.homepage-sections .hp-b-writing-head { max-width: 820px; margin-bottom: 48px; }
+.homepage-sections .hp-b-writing-head .hp-title { max-width: 18ch; }
+.homepage-sections .hp-b-writing-head .hp-copy { max-width: 55ch; }
+.homepage-sections .hp-b-article-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; }
+.homepage-sections .hp-b-article-card { display: flex; flex-direction: column; min-width: 0; text-decoration: none; background: #f4efee; color: #2e102b; border: 1px solid rgba(46,16,43,.1); transition: transform .2s ease,box-shadow .2s ease; }
+.homepage-sections .hp-b-article-card:hover { transform: translateY(-5px); box-shadow: 0 14px 32px rgba(28,9,25,.14); }
+.homepage-sections .hp-b-article-art { aspect-ratio: 1.4; overflow: hidden; }
+.homepage-sections .hp-b-article-image { width: 100%; height: 100%; display: block; object-fit: cover; }
+.homepage-sections .hp-b-article-copy { padding: 26px 25px 10px; flex: 1; }
+.homepage-sections .hp-b-article-card h3 { font: 500 clamp(22px,2.4cqi,31px)/1.25 var(--heading); letter-spacing: -.035em; margin: 0 0 14px; overflow-wrap: anywhere; }
+.homepage-sections .hp-b-read { font-size: 20px; line-height: 1.5; display: flex; align-items: center; justify-content: flex-end; gap: 18px; min-height: 48px; }
+.homepage-sections .hp-b-article-card > .hp-b-read { margin: 12px 25px 20px; border-top: 1px solid rgba(46,16,43,.17); padding-top: 13px; }
+
+@container home (max-width: 950px) {
+  .homepage-sections .hp-speaking-0 > .hp-bg { height: 410px; bottom: auto; }
+  .homepage-sections .hp-b-stage { min-height: 0; display: block; padding: 410px 0 0; }
+  .homepage-sections .hp-b-stage-copy { width: 100%; padding: 48px 8%; border: 0; background: #230c20; }
+  .homepage-sections .hp-b-stage-copy .hp-title { max-width: 17ch; font-size: 42px; }
+  .homepage-sections .hp-b-stage-copy .hp-copy { max-width: 48ch; }
+  .homepage-sections .hp-b-article-grid { gap: 18px; }
+  .homepage-sections .hp-b-article-copy { padding: 23px 20px 8px; }
+  .homepage-sections .hp-b-article-card > .hp-b-read { margin-left: 20px; margin-right: 20px; }
+}
+@container home (max-width: 700px) {
+  .homepage-sections .hp-speaking-0 > .hp-bg { height: 330px; }
+  .homepage-sections .hp-b-stage { min-height: 0; padding: 330px 0 0; }
+  .homepage-sections .hp-b-stage-copy { padding: 40px 8% 32px; width: 100%; }
+  .homepage-sections .hp-b-stage-copy .hp-title { font-size: 38px; }
+  .homepage-sections .hp-b-writing-grid { padding: 65px 7%; min-height: 0; }
+  .homepage-sections .hp-b-writing-head { margin-bottom: 32px; }
+  .homepage-sections .hp-b-writing-head .hp-title { font-size: 39px; }
+  .homepage-sections .hp-b-article-grid { grid-template-columns: 1fr; gap: 24px; }
+  .homepage-sections .hp-b-article-art { aspect-ratio: 1.65; }
+  .homepage-sections .hp-b-article-card h3 { font-size: 27px; }
+  .homepage-sections .hp-b-article-copy { padding: 25px 25px 8px; }
+  .homepage-sections .hp-b-article-card > .hp-b-read { margin-left: 25px; margin-right: 25px; }
+}
+@container home (max-width: 600px) {
+  .homepage-sections .hp-title { font-size: 39px; }
+  .homepage-sections .hp-copy { font-size: 17px; line-height: 1.8; }
+  .homepage-sections .hp-actions { gap: 10px 24px; align-items: flex-start; }
+  .homepage-sections .hp-button { font-size: 12px; gap: 15px; padding: 13px 18px; }
+  .homepage-sections .hp-speaking-0 > .hp-bg img { object-position: 50% top !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .homepage-sections .hp-b-article-card { transition: none; }
+  .homepage-sections .hp-b-article-card:hover { transform: none; }
+}
