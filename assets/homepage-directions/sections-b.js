@@ -2,6 +2,7 @@ import {esc,actions,background} from './shared.js?v=choices3';
 
 const copy=d=>`<h2 class="hp-title">${esc(d.headline)}</h2><p class="hp-copy">${esc(d.subheadline)}</p>`;
 const action=d=>actions((d.ctas||[]).slice(0,1));
+const speakingAction=d=>{const resource=(d.ctas||[]).find(c=>c.role==='secondary');return action(d)+(resource?`<a class="hp-podcast-link" href="${esc(resource.href)}">${esc(resource.label)} <span aria-hidden="true">↗</span></a>`:'');};
 const photo=(src,alt,cls='')=>src?`<img class="${cls}" src="${esc(src)}" alt="${esc(alt)}" loading="lazy" decoding="async">`:'';
 const section=(id,n,bg,html)=>`<section class="hp-section hp-${id} hp-${id}-${n} theme-${esc(bg.tone||'dark')}" data-bg="${esc(bg.id||'')}">${background(bg)}${html}</section>`;
 const articles=d=>(d.articles||[]).slice(0,3);
@@ -10,9 +11,9 @@ const articleLink=(a,cls,content)=>`<a class="${cls}" href="${esc(a.url)}" targe
 
 function speaking(n,d,bg){
  const image=d.speakingImage||d.portrait||bg.src;
- if(n===0)return section('speaking',n,bg,`<div class="hp-inner hp-b-stage"><div class="hp-b-stage-copy">${copy(d)}${action(d)}</div></div>`);
- if(n===1)return section('speaking',n,bg,`<div class="hp-inner hp-b-speaking-split"><figure class="hp-b-speaking-photo">${photo(image,'Tracy speaking with her hands out to a group.')}</figure><div class="hp-b-speaking-copy">${copy(d)}${action(d)}</div></div>`);
- return section('speaking',n,bg,`<div class="hp-inner hp-b-speaking-center"><div class="hp-b-center-copy">${copy(d)}${action(d)}</div><figure class="hp-b-speaking-wide">${photo(image,'Tracy speaking with her hands out to a group.')}</figure></div>`);
+ if(n===0)return section('speaking',n,bg,`<div class="hp-inner hp-b-stage"><div class="hp-b-stage-copy">${copy(d)}${speakingAction(d)}</div></div>`);
+ if(n===1)return section('speaking',n,bg,`<div class="hp-inner hp-b-speaking-split"><figure class="hp-b-speaking-photo">${photo(image,'Tracy speaking with her hands out to a group.')}</figure><div class="hp-b-speaking-copy">${copy(d)}${speakingAction(d)}</div></div>`);
+ return section('speaking',n,bg,`<div class="hp-inner hp-b-speaking-center"><div class="hp-b-center-copy">${copy(d)}${speakingAction(d)}</div><figure class="hp-b-speaking-wide">${photo(image,'Tracy speaking with her hands out to a group.')}</figure></div>`);
 }
 
 function writing(n,d,bg){

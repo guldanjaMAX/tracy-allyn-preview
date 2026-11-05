@@ -208,7 +208,7 @@ export const content = {
       "title": "Meet Tracy",
       "eyebrow": "Meet Tracy",
       "headline": "The tools I had as a sex and intimacy coach were the tools I needed as a CEO.",
-      "subheadline": "Tracy’s work brings desire, presence and connection into the same conversation. Her story begins with leadership, performance, and a different way of being in her own life.",
+      "subheadline": "After twenty years as a CEO, Tracy now coaches executives and high performers to work with their erotic energy on purpose.",
       "quote": "",
       "ctas": [
         {
@@ -220,12 +220,10 @@ export const content = {
       "purpose": "Show who is guiding the work and give a credible human bridge between business and intimacy.",
       "sourceStatus": {
         "headline": "Restored from the earlier copy map",
-        "subheadline": "Restored from the earlier copy map",
-        "supportingCopy": "Quote is retained from supplied source material"
+        "subheadline": "Adapted from Tracy’s chosen podcast bio supplied by James on November 5, 2026",
+        "supportingCopy": "Twenty-year CEO timeline and current coaching audience are supplied in the approved podcast bio"
       },
       "missingInputs": [
-        "Preferred professional title and approved short bio.",
-        "Consistent CEO timeline before using a year count.",
         "Image usage and credits for any newly selected photo."
       ],
       "recommendedLayout": "A",
@@ -308,25 +306,30 @@ export const content = {
       "title": "Bring Tracy into the room",
       "eyebrow": "Speaking and conversations",
       "headline": "Bring this conversation into the room.",
-      "subheadline": "For groups ready to explore the connection between presence, intimacy and leadership.",
+      "subheadline": "Conversations about erotic energy, presence, and the connection between great lovers and great leaders.",
       "ctas": [
         {
           "label": "Book Tracy to speak",
           "href": "mailto:tracy@tracy-allyn.com?subject=Speaking%20inquiry",
           "role": "primary"
+        },
+        {
+          "label": "Podcast bio & topics",
+          "href": "podcast.html",
+          "role": "secondary"
         }
       ],
       "purpose": "Make the speaking path visible without requiring an event organizer to take the quiz.",
       "sourceStatus": {
         "headline": "Restored from the earlier copy map",
-        "subheadline": "Restored from the earlier copy map",
+        "subheadline": "Adapted from Tracy’s chosen podcast bio and on-air topics supplied by James on November 5, 2026",
         "supportingCopy": "No unverified audience numbers, client logos, outcomes or talk availability"
       },
       "missingInputs": [
-        "Flagship topic and confirmed current formats.",
+        "Confirmed event formats and durations; podcast conversation topics are now supplied.",
         "Three concrete things participants will do or take away.",
         "Permission-cleared speaking photograph or clip.",
-        "Current one-sheet and approved testimonials."
+        "Current event one-sheet; the approved podcast bio and eight on-air topics are now available."
       ],
       "recommendedLayout": "A",
       "backgroundIdeas": [

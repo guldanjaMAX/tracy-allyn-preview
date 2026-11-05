@@ -1,8 +1,8 @@
-import {content,sections} from './data.js?v=bridge-cta1';
+import {content,sections} from './data.js?v=podcast-bio1';
 import {esc} from './shared.js?v=choices3';
 import {renderA} from './sections-a.js?v=choices3';
-import {renderB} from './sections-b.js?v=choices3';
-import {defaults,readState,queryFor} from './state.js?v=bridge-cta1';
+import {renderB} from './sections-b.js?v=podcast-bio1';
+import {defaults,readState,queryFor} from './state.js?v=podcast-bio1';
 let state=readState(location.search);const app=document.getElementById('app');const announce=document.getElementById('announcement');
 const selected=()=>sections.find(d=>d.id===state.section);const position=()=>sections.findIndex(d=>d.id===state.section);const letter=i=>String.fromCharCode(65+i);
 const urlFor=patch=>location.origin+location.pathname+queryFor({...state,...patch});
