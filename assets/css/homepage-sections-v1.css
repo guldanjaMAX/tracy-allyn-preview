@@ -143,3 +143,44 @@
 /* One quiet resource link for podcast hosts. */
 .homepage-sections .hp-speaking .hp-podcast-link { display: inline-flex; align-items: center; gap: 12px; width: fit-content; margin-top: 18px; padding: 5px 0; color: inherit; font-size: 14px; line-height: 1.5; text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
 .homepage-sections .hp-speaking .hp-podcast-link:focus-visible { outline: 3px solid #d4b79d; outline-offset: 5px; }
+
+/* Selected client reflection: a quiet continuation of About's plum atmosphere. */
+.homepage-sections .hp-proof--plum {
+  overflow: hidden;
+  padding: 56px 8% 64px;
+  color: #f4efee;
+  background: #2e102b;
+}
+.homepage-sections .hp-proof--plum::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(180deg, #2e102b 0%, rgba(46,16,43,.25) 45%, rgba(46,16,43,.35) 100%),
+    linear-gradient(90deg, #2e102b 20%, rgba(46,16,43,.76) 100%),
+    url("../homepage-directions/media/plum-atmosphere.webp");
+  background-size: cover;
+  background-position: right center;
+}
+.homepage-sections .hp-proof--plum .hp-proof-inner { max-width: 900px; }
+.homepage-sections .hp-proof--plum blockquote p {
+  max-width: 43ch;
+  font-size: clamp(28px, 2.8cqi, 40px);
+  line-height: 1.4;
+  letter-spacing: -.025em;
+}
+.homepage-sections .hp-proof--plum .hp-proof-emphasis { color: #d4b79d; }
+.homepage-sections .hp-proof--plum figcaption {
+  margin-top: 24px;
+  color: #e1cfc5;
+  font-size: 13px;
+  letter-spacing: .025em;
+}
+.homepage-sections .hp-proof--plum .hp-proof-rule { color: #d4b79d; }
+@container home (max-width: 600px) {
+  .homepage-sections .hp-proof--plum { padding: 40px 8% 46px; }
+  .homepage-sections .hp-proof--plum blockquote p { font-size: 27px; line-height: 1.42; }
+  .homepage-sections .hp-proof--plum figcaption { margin-top: 22px; font-size: 12px; }
+}
