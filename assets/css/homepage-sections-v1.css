@@ -122,3 +122,20 @@
   .homepage-sections .hp-about-face::after { background: linear-gradient(transparent 80%,#2e102b); }
   .homepage-sections .hp-about-intro { width: 100%; min-height: 0; padding: 30px 8% 70px; }
 }
+
+/* Quiet client reflections. Real words and broad roles, with no identity imagery. */
+.homepage-sections .hp-proof { position: relative; isolation: isolate; margin: 0; padding: 72px 8% 82px; color: #2e102b; background: radial-gradient(ellipse at 20% 0%,rgba(212,183,157,.24),transparent 65%),#f4efee; }
+.homepage-sections .hp-proof--dark { color: #f4efee; background: radial-gradient(ellipse at 80% 100%,rgba(125,67,84,.22),transparent 65%),#281024; }
+.homepage-sections .hp-proof-inner { max-width: 1000px; margin: 0 auto; text-align: center; }
+.homepage-sections .hp-proof-mark { display: block; height: 50px; margin-bottom: 20px; color: #976447; font: 400 92px/1 Georgia,serif; }
+.homepage-sections .hp-proof--dark .hp-proof-mark { color: #d4b79d; }
+.homepage-sections .hp-proof blockquote { margin: 0; }
+.homepage-sections .hp-proof blockquote p { max-width: 37ch; margin: 0 auto; font: 500 clamp(28px,3.2cqi,46px)/1.4 var(--heading); letter-spacing: -.025em; text-wrap: balance; overflow-wrap: break-word; }
+.homepage-sections .hp-proof figcaption { margin-top: 30px; display: flex; align-items: center; justify-content: center; gap: 14px; font: 400 13px/1.6 var(--body); letter-spacing: .035em; }
+.homepage-sections .hp-proof-rule { display: inline-block; width: 30px; height: 1px; flex: none; background: currentColor; opacity: .55; }
+@container home (max-width: 600px) {
+  .homepage-sections .hp-proof { padding: 48px 8% 58px; }
+  .homepage-sections .hp-proof-mark { font-size: 76px; height: 42px; margin-bottom: 18px; }
+  .homepage-sections .hp-proof blockquote p { font-size: 29px; line-height: 1.42; }
+  .homepage-sections .hp-proof figcaption { margin-top: 25px; font-size: 12px; }
+}
