@@ -113,8 +113,8 @@ export const content = {
       "subheadline": "How you connect, what you desire, and how fully you let yourself be seen do not stay in one part of your life. This is a place to explore what feels alive, what feels distant, and what you want more room for.",
       "ctas": [
         {
-          "label": "Explore The Magnet",
-          "href": "quiz-result.html",
+          "label": "Discover my type",
+          "href": "quiz-preview.html",
           "role": "primary"
         }
       ],
