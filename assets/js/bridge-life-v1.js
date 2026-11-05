@@ -2,14 +2,11 @@
   'use strict';
   var section = document.getElementById('bridge');
   var video = document.getElementById('bridge-video');
-  var button = document.getElementById('bridge-motion-toggle');
-  if (!section || !video || !button) return;
-  var label = button.querySelector('.hp-bridge-motion-label');
-  var icon = button.querySelector('.hp-bridge-motion-icon');
+  if (!section || !video) return;
   var device = window.matchMedia('(max-width: 1000px)');
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-  var visible = false, userPaused = false, userEnabled = false;
+  var visible = false;
   var blocked = false, failed = false, pending = false;
   var source = '', version = 0, attempt = 0;
 
@@ -17,19 +14,12 @@
   video.defaultMuted = true;
   video.playsInline = true;
   video.loop = true;
-  button.hidden = false;
 
   function motionAllowed() {
-    return userEnabled || (!reduced.matches && !(connection && connection.saveData));
+    return !reduced.matches && !(connection && connection.saveData);
   }
   function eligible() {
-    return visible && !document.hidden && motionAllowed() && !userPaused && !blocked && !failed;
-  }
-  function updateButton() {
-    var playing = !video.paused || pending;
-    label.textContent = playing ? 'Pause video' : 'Play video';
-    icon.textContent = playing ? 'Ⅱ' : '▶';
-    button.setAttribute('aria-label', playing ? 'Pause background video' : 'Play background video');
+    return visible && !document.hidden && motionAllowed() && !blocked && !failed;
   }
   function stop(hide) {
     attempt += 1;
@@ -37,7 +27,6 @@
     video.autoplay = false;
     video.pause();
     if (hide) video.classList.remove('is-playing');
-    updateButton();
   }
   function unload() {
     version += 1;
@@ -65,13 +54,11 @@
     var thisVersion = version, thisAttempt = ++attempt;
     pending = true;
     video.autoplay = true;
-    updateButton();
     function rejected(error) {
       if (thisVersion !== version || thisAttempt !== attempt) return;
       pending = false;
       // Visibility or a source switch may abort playback without a media failure.
       if (error && error.name === 'AbortError') {
-        updateButton();
         return;
       }
       blocked = true;
@@ -83,9 +70,8 @@
         if (thisVersion !== version || thisAttempt !== attempt) return;
         pending = false;
         if (!eligible()) stop(false);
-        else updateButton();
       }, rejected);
-      else { pending = false; updateButton(); }
+      else pending = false;
     } catch (error) { rejected(error); }
   }
   function sync() {
@@ -93,26 +79,12 @@
     else stop(!motionAllowed());
   }
 
-  button.addEventListener('click', function () {
-    if (!video.paused || pending) {
-      userPaused = true;
-      stop(false);
-      return;
-    }
-    userPaused = false;
-    userEnabled = true;
-    blocked = false;
-    if (failed) { failed = false; unload(); }
-    play();
-  });
   video.addEventListener('playing', function () {
     if (!eligible()) { stop(!motionAllowed()); return; }
     pending = false;
     blocked = false;
     video.classList.add('is-playing');
-    updateButton();
   });
-  video.addEventListener('pause', updateButton);
   video.addEventListener('canplay', play);
   video.addEventListener('error', function () {
     // Removing a source while changing preferences is not a failed media load.
@@ -131,8 +103,7 @@
     sync();
   }
   function preferencesChanged() {
-    // A newly enabled system/data preference takes effect even after explicit play.
-    userEnabled = false;
+    // System motion and data preferences always take precedence over autoplay.
     blocked = false;
     if (!motionAllowed()) unload();
     sync();
@@ -171,5 +142,4 @@
     window.addEventListener('resize', schedulePositionCheck);
     checkPosition();
   }
-  updateButton();
 })();
