@@ -1,0 +1,49 @@
+/* Only the everyday-life bridge. The approved opening remains independent. */
+.homepage-sections .hp-bridge-video { min-height: 780px; display: flex; align-items: stretch; background: #f4efee; }
+.homepage-sections .hp-bridge-media { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.homepage-sections .hp-bridge-poster,
+.homepage-sections .hp-bridge-poster img,
+.homepage-sections .hp-bridge-film { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.homepage-sections .hp-bridge-film { opacity: 0; transition: opacity .45s ease; }
+.homepage-sections .hp-bridge-film.is-playing { opacity: 1; }
+.homepage-sections .hp-bridge-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg,rgba(244,239,238,.02) 22%,rgba(244,239,238,.2) 43%,rgba(244,239,238,.91) 57%,rgba(244,239,238,.97) 76%,#f4efee 100%); }
+.homepage-sections .hp-bridge-video-copy { width: 49%; margin-left: auto; margin-right: 0; padding: 110px 6% 110px 3%; display: flex; flex-direction: column; justify-content: center; text-align: left; }
+.homepage-sections .hp-bridge-video-copy .hp-title { max-width: 15ch; font-size: clamp(42px,4.6cqi,68px); line-height: 1.13; }
+.homepage-sections .hp-bridge-video-copy .hp-copy { max-width: 41ch; font-size: 18px; line-height: 1.8; opacity: 1; }
+.homepage-sections .hp-bridge-video-copy .hp-actions { justify-content: flex-start; }
+.homepage-sections .hp-bridge-motion { position: absolute; z-index: 2; bottom: 24px; left: 28px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 44px; padding: 10px 16px; border: 1px solid rgba(46,16,43,.25); border-radius: 24px; background: rgba(244,239,238,.9); color: #2e102b; cursor: pointer; font: 400 12px/1.5 Figtree,Arial,sans-serif; }
+.homepage-sections .hp-bridge-motion[hidden] { display: none; }
+.homepage-sections .hp-bridge-motion:hover { background: #f4efee; border-color: #2e102b; }
+.homepage-sections .hp-bridge-motion:focus-visible { outline: 3px solid #702132; outline-offset: 4px; }
+.homepage-sections .hp-bridge-motion-icon { width: 12px; text-align: center; font-size: 11px; }
+@media (min-width: 1001px) and (max-width: 1100px) {
+  .homepage-sections .hp-bridge-video { min-height: 760px; }
+  .homepage-sections .hp-bridge-video-copy { width: 51%; padding: 90px 5% 90px 3%; }
+  .homepage-sections .hp-bridge-video-copy .hp-title { font-size: 44px; }
+  .homepage-sections .hp-bridge-video-copy .hp-copy { font-size: 17px; }
+}
+/* Portrait art direction also covers tablets, where a tall landscape crop
+   would trim the left-side people before the copy column begins. */
+@media (max-width: 1000px) {
+  .homepage-sections .hp-bridge-video { min-height: 900px; display: block; }
+  .homepage-sections .hp-bridge-poster img,
+  .homepage-sections .hp-bridge-film { object-position: center top; }
+  .homepage-sections .hp-bridge-media::after { background: linear-gradient(180deg,rgba(244,239,238,.02) 15%,rgba(244,239,238,.05) 27%,rgba(244,239,238,.6) 38%,rgba(244,239,238,.96) 48%,#f4efee 68%); }
+  .homepage-sections .hp-bridge-video-copy { width: 100%; padding: clamp(350px,94vw,520px) 8% 95px; }
+  .homepage-sections .hp-bridge-video-copy .hp-title { max-width: 17ch; font-size: clamp(38px,8.8vw,52px); }
+  .homepage-sections .hp-bridge-video-copy .hp-copy { max-width: 46ch; font-size: 17px; line-height: 1.75; }
+  .homepage-sections .hp-bridge-video-copy .hp-actions { margin-top: 28px; }
+  .homepage-sections .hp-bridge-motion { bottom: 22px; left: 8%; }
+}
+/* On tablets the full-width portrait enlarges faces lower into the frame.
+   Keep the first 45% clear, then bring the Petal wash beneath the live copy. */
+@media (min-width: 601px) and (max-width: 1000px) {
+  .homepage-sections .hp-bridge-media::after { background: linear-gradient(180deg,rgba(244,239,238,.02) 15%,rgba(244,239,238,.04) 45%,rgba(244,239,238,.85) 56%,rgba(244,239,238,.98) 67%,#f4efee 80%); }
+}
+@media (max-width: 370px) {
+  .homepage-sections .hp-bridge-video-copy { padding-left: 7%; padding-right: 7%; }
+  .homepage-sections .hp-bridge-video-copy .hp-title { font-size: 37px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .homepage-sections .hp-bridge-film { transition: none; }
+}
