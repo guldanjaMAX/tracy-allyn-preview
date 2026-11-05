@@ -515,8 +515,8 @@ export const content = {
       "smilePortrait": "assets/homepage-directions/media/portrait-smile.webp",
       "bwPortrait": "assets/homepage-directions/media/portrait-bw.webp",
       "speakingImage": "assets/homepage-directions/media/speaking.webp",
-      "recommended": 1,
-      "recommendedBg": 0,
+      "recommended": 0,
+      "recommendedBg": 1,
       "articles": [
         {
           "title": "FROM CEO TO SEX COACH",
@@ -539,7 +539,9 @@ export const content = {
           "image": "assets/homepage-directions/media/sunlight.webp",
           "alt": "Sunlight and leaf shadows, editorial cover concept"
         }
-      ]
+      ],
+      "locked": true,
+      "selectedByJames": "5A, Soft Natural Light"
     },
     {
       "id": "closing",
@@ -648,7 +650,7 @@ export const content = {
     }
   ],
   "articleNote": "The titles and links are real. These photos and atmospheric covers are new design treatments, not Substack screenshots or original article artwork.",
-  "scope": "The approved opening stays unchanged. Five sections below it use one headline, one subheadline and one primary link. Speaking 4A with the hands-out photo is selected."
+  "scope": "The approved opening stays unchanged. Five sections below it use one headline, one subheadline and one primary link. Speaking4A with the hands-out photo and Writing5A with Soft Natural Light are selected."
 };
 export const opening = content.sections.find(d=>d.id==='hero');
 export const sections = content.sections.filter(d=>d.id!=='hero');

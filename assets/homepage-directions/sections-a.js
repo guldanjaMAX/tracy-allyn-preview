@@ -1,4 +1,4 @@
-import {esc,actions,background,heading} from './shared.js?v=simple2';
+import {esc,actions,background,heading} from './shared.js?v=choices3';
 const image=(src,alt,cl='',position='')=>`<img class="${cl}" ${position?`style="object-position:${esc(position)}"`:""} src="${esc(src)}" alt="${esc(alt)}" loading="lazy">`;
 export function renderA(id,v,d,bg){
  let inner='';

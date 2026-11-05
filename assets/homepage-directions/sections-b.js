@@ -1,4 +1,4 @@
-import {esc,actions,background} from './shared.js?v=simple2';
+import {esc,actions,background} from './shared.js?v=choices3';
 
 const copy=d=>`<h2 class="hp-title">${esc(d.headline)}</h2><p class="hp-copy">${esc(d.subheadline)}</p>`;
 const action=d=>actions((d.ctas||[]).slice(0,1));
