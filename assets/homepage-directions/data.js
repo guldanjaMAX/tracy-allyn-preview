@@ -102,30 +102,26 @@ export const content = {
       "bwPortrait": "assets/homepage-directions/media/portrait-bw.webp",
       "speakingImage": "assets/homepage-directions/media/speaking.webp",
       "recommended": 0,
-      "recommendedBg": 0
+      "recommendedBg": 0,
+      "locked": true
     },
     {
       "id": "bridge",
       "title": "Why this belongs in your life",
       "eyebrow": "Connection, in everyday life",
       "headline": "More of you, in every part of your life.",
-      "subheadline": "With yourself. With the people you love. In the rooms you lead. Begin with what you want more of.",
+      "subheadline": "How you connect, what you desire, and how fully you let yourself be seen do not stay in one part of your life. This is a place to explore what feels alive, what feels distant, and what you want more room for.",
       "ctas": [
         {
           "label": "Explore The Magnet",
           "href": "quiz-result.html",
           "role": "primary"
-        },
-        {
-          "label": "Read Tracy’s story",
-          "href": "https://tracy-allyn.com/about",
-          "role": "secondary"
         }
       ],
       "purpose": "Explain how intimacy, presence and leadership connect, then offer a small first step.",
       "sourceStatus": {
-        "headline": "Editorial candidate from the copy map",
-        "subheadline": "New editorial candidate grounded in the leadership and intimacy brief",
+        "headline": "Restored from the earlier copy map",
+        "subheadline": "Restored from the earlier copy map",
         "supportingCopy": "No promise of a specific outcome"
       },
       "missingInputs": [
@@ -158,8 +154,8 @@ export const content = {
         },
         {
           "id": "B",
-          "name": "Three parts of a life",
-          "layout": "Headline above three open columns: With yourself, With the people you love, In the rooms you lead. The final invitation sits beneath them.",
+          "name": "The simple split",
+          "layout": "One headline on the left. One subheadline and link on the right.",
           "background": "Petal base with a quiet full-width image; no individual stock-photo cards",
           "mobile": "Three short stacked rows with ample separation.",
           "why": "Makes the idea concrete and fast to understand."
@@ -204,32 +200,27 @@ export const content = {
       "smilePortrait": "assets/homepage-directions/media/portrait-smile.webp",
       "bwPortrait": "assets/homepage-directions/media/portrait-bw.webp",
       "speakingImage": "assets/homepage-directions/media/speaking.webp",
-      "recommended": 1,
+      "recommended": 0,
       "recommendedBg": 0
     },
     {
       "id": "about",
       "title": "Meet Tracy",
       "eyebrow": "Meet Tracy",
-      "headline": "Presence makes you steady. Vitality makes you magnetic.",
-      "subheadline": "Tracy brings her experience as a CEO and intimacy coach to the way we lead, relate, and live.",
-      "quote": "The tools I had as a sex and intimacy coach were the tools I needed as a CEO.",
+      "headline": "The tools I had as a sex and intimacy coach were the tools I needed as a CEO.",
+      "subheadline": "Tracy’s work brings desire, presence and connection into the same conversation. Her story begins with leadership, performance, and a different way of being in her own life.",
+      "quote": "",
       "ctas": [
         {
           "label": "Meet Tracy",
           "href": "https://tracy-allyn.com/about",
           "role": "primary"
-        },
-        {
-          "label": "Explore private work",
-          "href": "https://tracy-allyn.com/sessions",
-          "role": "secondary"
         }
       ],
       "purpose": "Show who is guiding the work and give a credible human bridge between business and intimacy.",
       "sourceStatus": {
-        "headline": "Supplied About wording, first two sentences",
-        "subheadline": "New editorial summary of the brief; preferred professional title still needs confirmation",
+        "headline": "Restored from the earlier copy map",
+        "subheadline": "Restored from the earlier copy map",
         "supportingCopy": "Quote is retained from supplied source material"
       },
       "missingInputs": [
@@ -263,8 +254,8 @@ export const content = {
         },
         {
           "id": "B",
-          "name": "The sentence that connects it",
-          "layout": "Lead with the supplied CEO and intimacy quote in large type, then place a small portrait, name and two clear links beneath.",
+          "name": "The quiet introduction",
+          "layout": "One large headline, a small portrait, one subheadline and link.",
           "background": "Pale textured background with one contained real portrait",
           "mobile": "Quote, portrait and links form a single readable sequence.",
           "why": "Makes the connection memorable without a long biography."
@@ -323,17 +314,12 @@ export const content = {
           "label": "Book Tracy to speak",
           "href": "mailto:tracy@tracy-allyn.com?subject=Speaking%20inquiry",
           "role": "primary"
-        },
-        {
-          "label": "Meet Tracy",
-          "href": "https://tracy-allyn.com/about",
-          "role": "secondary"
         }
       ],
       "purpose": "Make the speaking path visible without requiring an event organizer to take the quiz.",
       "sourceStatus": {
-        "headline": "Editorial candidate from the copy map",
-        "subheadline": "Editorial candidate from the copy map",
+        "headline": "Restored from the earlier copy map",
+        "subheadline": "Restored from the earlier copy map",
         "supportingCopy": "No unverified audience numbers, client logos, outcomes or talk availability"
       },
       "missingInputs": [
@@ -415,30 +401,27 @@ export const content = {
       "bwPortrait": "assets/homepage-directions/media/portrait-bw.webp",
       "speakingImage": "assets/homepage-directions/media/speaking.webp",
       "recommended": 0,
-      "recommendedBg": 0
+      "recommendedBg": 0,
+      "locked": true,
+      "selectedByJames": "4A, with the hands-out photograph"
     },
     {
       "id": "writing",
       "title": "Writing and media",
       "eyebrow": "Unabashedly Embodied",
-      "headline": "Ideas to spend time with.",
-      "subheadline": "Writing and conversations on desire, connection, leadership, and being more fully yourself.",
+      "headline": "Writing from Tracy.",
+      "subheadline": "Tracy writes about intimacy, leadership, desire and the moments that make us feel more alive.",
       "ctas": [
         {
           "label": "Read Tracy’s writing",
           "href": "https://tracyallyn.substack.com/",
           "role": "primary"
-        },
-        {
-          "label": "Explore The Magnet",
-          "href": "quiz-result.html",
-          "role": "secondary"
         }
       ],
       "purpose": "Let people sample Tracy’s voice and choose something relevant to them.",
       "sourceStatus": {
-        "headline": "Editorial candidate from the copy map",
-        "subheadline": "New editorial summary of themes in supplied writing",
+        "headline": "Restored from the earlier copy map",
+        "subheadline": "Restored from the earlier copy map",
         "supportingCopy": "Three exact article titles and direct links verified. Descriptions and cover treatments are editorial."
       },
       "articleCandidates": [
@@ -563,23 +546,18 @@ export const content = {
       "title": "A quiet next step",
       "eyebrow": "Stay connected",
       "headline": "Keep exploring.",
-      "subheadline": "Read a little. Notice what stays with you. Come back when you want more.",
+      "subheadline": "Writing and invitations from Tracy, when you want more.",
       "ctas": [
         {
           "label": "Read on Substack",
           "href": "https://tracyallyn.substack.com/",
           "role": "primary"
-        },
-        {
-          "label": "Try a first reflection",
-          "href": "quiz-result.html#practice",
-          "role": "secondary"
         }
       ],
       "purpose": "Close warmly with a small, real next action, then provide a useful footer.",
       "sourceStatus": {
-        "headline": "Editorial candidate from the copy map",
-        "subheadline": "New editorial candidate; does not promise an unimplemented email service",
+        "headline": "Restored from the earlier copy map",
+        "subheadline": "Restored from the earlier copy map",
         "supportingCopy": "Future subscription copy is separated below until its promise and delivery are confirmed"
       },
       "futureNewsletter": {
@@ -627,8 +605,8 @@ export const content = {
         },
         {
           "id": "C",
-          "name": "Two easy doors",
-          "layout": "A short closing introduction with two clear choices: writing or a first reflection.",
+          "name": "One simple invitation",
+          "layout": "A headline and subheadline on the left, with a single link on the right.",
           "background": "Soft Plum water or a warm natural-light field",
           "mobile": "Two full-width choices stacked with clear labels.",
           "why": "Provides a calm visual finish after the article section."
@@ -670,6 +648,7 @@ export const content = {
     }
   ],
   "articleNote": "The titles and links are real. These photos and atmospheric covers are new design treatments, not Substack screenshots or original article artwork.",
-  "scope": "Six proposed homepage sections and three layout directions each. Current homepage has the selected hero and menu; sections 2 through 6 are proposed additions, not existing live content."
+  "scope": "The approved opening stays unchanged. Five sections below it use one headline, one subheadline and one primary link. Speaking 4A with the hands-out photo is selected."
 };
-export const sections = content.sections;
+export const opening = content.sections.find(d=>d.id==='hero');
+export const sections = content.sections.filter(d=>d.id!=='hero');
