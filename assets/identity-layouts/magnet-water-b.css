@@ -1,0 +1,299 @@
+/* The Magnet / Water: image direction for the selected 4B, 5B and 6D layouts.
+   Load after sections-b.css. Artwork is a section background; all copy stays live. */
+
+body.magnet-water :is(.b-now-2, .b-practice-2, .b-path-4) {
+  --mw-b-inset: clamp(28px, 7cqi, 112px);
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: clamp(88px, 9cqi, 150px) var(--mw-b-inset);
+  border: 0;
+  border-radius: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  isolation: isolate;
+  scroll-margin-top: 24px;
+}
+
+/* A warm, open page with the honest sentence as the only large gesture. */
+body.magnet-water .b-now-2 {
+  --b-soft: #702132;
+  --b-line: rgba(46, 16, 43, .24);
+  min-height: clamp(700px, 88svh, 980px);
+  color: #2e102b;
+  background-color: #f4ede1;
+  background-image:
+    radial-gradient(ellipse at 50% 47%, rgba(250, 245, 235, .92) 0%, rgba(250, 245, 235, .74) 37%, rgba(250, 245, 235, .23) 73%, rgba(250, 245, 235, .12) 100%),
+    linear-gradient(180deg, rgba(247, 240, 229, .25), rgba(247, 240, 229, .12) 70%, rgba(247, 240, 229, .36)),
+    url("../magnet-water/04-life-now.webp");
+  background-position: center, center, center 54%;
+}
+
+body.magnet-water .b-now-2 h2 {
+  max-width: 45ch;
+  margin: 0 auto 34px;
+  font-size: clamp(19px, 1.7cqi, 23px);
+  line-height: 1.5;
+  color: #573347;
+}
+
+body.magnet-water .b-now-2 .b-honest-line {
+  max-width: 26ch;
+  margin: 0 auto 42px;
+  font-size: clamp(34px, 4.1cqi, 60px);
+  line-height: 1.23;
+  letter-spacing: -.035em;
+  color: #2e102b;
+}
+
+body.magnet-water .b-now-2 .b-honest-body {
+  max-width: 56ch;
+  margin: 0 auto;
+  background: transparent;
+}
+
+body.magnet-water .b-now-2 .b-honest-body p {
+  margin-bottom: 0;
+  font-size: clamp(16px, 1.5cqi, 18px);
+  line-height: 1.85;
+}
+
+body.magnet-water .b-now-2 .b-small-rule {
+  width: 40px;
+  height: 1px;
+  margin-bottom: 30px;
+  background: #8d553e;
+}
+
+body.magnet-water .b-now-2 .b-closing-line {
+  max-width: 48ch;
+  margin: 30px auto 0;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #702132;
+}
+
+/* One question, held in the darker part of the water. */
+body.magnet-water .b-practice-2 {
+  --b-soft: #e2c8ae;
+  --b-line: rgba(244, 239, 238, .3);
+  min-height: clamp(760px, 94svh, 1080px);
+  color: #f7f1e9;
+  background-color: #241125;
+  background-image:
+    radial-gradient(ellipse at 50% 45%, rgba(34, 14, 35, .85) 0%, rgba(34, 14, 35, .66) 37%, rgba(34, 14, 35, .17) 77%),
+    linear-gradient(180deg, rgba(30, 14, 31, .21), rgba(30, 14, 31, .08) 58%, rgba(30, 14, 31, .4)),
+    url("../magnet-water/05-first-practice.webp");
+  background-position: center, center, center 55%;
+}
+
+body.magnet-water .b-practice-2 .b-quiet-prompt {
+  width: 100%;
+  max-width: 750px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body.magnet-water .b-practice-2 h2 {
+  margin-bottom: 30px;
+  font-size: clamp(19px, 1.8cqi, 23px);
+  line-height: 1.5;
+  color: #e2c8ae;
+}
+
+body.magnet-water .b-practice-2 .b-quiet-question {
+  max-width: 25ch;
+  margin: 0 auto 32px;
+  font-size: clamp(34px, 4.2cqi, 61px);
+  line-height: 1.25;
+  letter-spacing: -.03em;
+  color: #fff7ec;
+}
+
+body.magnet-water .b-practice-2 .b-quiet-first {
+  max-width: 45ch;
+  margin: 0 auto 32px;
+  color: #ecdfd3;
+}
+
+body.magnet-water .b-practice-2 .b-quiet-first p {
+  font-size: clamp(16px, 1.5cqi, 18px);
+  line-height: 1.8;
+}
+
+body.magnet-water .b-practice-2 .b-prompt-orbit {
+  width: 660px;
+  height: 660px;
+  max-width: 90%;
+  border-color: rgba(230, 202, 173, .1);
+}
+
+body.magnet-water .b-practice-2 .b-quiet-details {
+  max-width: 48ch;
+  color: #f3e9df;
+  background: transparent;
+}
+
+body.magnet-water .b-practice-2 .b-quiet-details summary {
+  min-height: 54px;
+  padding: 17px 0;
+  font-size: 14px;
+  color: #f7f1e9;
+}
+
+body.magnet-water .b-practice-2 .b-quiet-details summary:hover {
+  color: #e2c8ae;
+}
+
+body.magnet-water .b-practice-2 .b-quiet-details summary:focus-visible {
+  outline-color: #e2c8ae;
+}
+
+body.magnet-water .b-practice-2 .b-quiet-details[open] summary span {
+  transform: rotate(45deg);
+}
+
+body.magnet-water .b-practice-2 .b-quiet-details li {
+  padding-left: 3px;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+/* Three quiet horizons with thin rules instead of enclosed cards. */
+body.magnet-water .b-path-4 {
+  --b-soft: #702132;
+  --b-line: rgba(46, 16, 43, .24);
+  min-height: clamp(690px, 84svh, 980px);
+  color: #2e102b;
+  background-color: #f0e6d6;
+  background-image:
+    linear-gradient(90deg, rgba(248, 241, 228, .82), rgba(248, 241, 228, .71) 52%, rgba(248, 241, 228, .63)),
+    linear-gradient(180deg, rgba(248, 241, 228, .16), rgba(248, 241, 228, .04) 65%, rgba(248, 241, 228, .3)),
+    url("../magnet-water/06-path-forward.webp");
+  background-position: center, center, center 55%;
+}
+
+body.magnet-water .b-path-4 :is(header, .b-time-columns, footer) {
+  width: 100%;
+  max-width: 1140px;
+  margin-right: auto;
+  margin-left: auto;
+  background: transparent;
+}
+
+body.magnet-water .b-path-4 header {
+  margin-bottom: 64px;
+}
+
+body.magnet-water .b-path-4 h2 {
+  max-width: 23ch;
+  font-size: clamp(34px, 4cqi, 57px);
+  line-height: 1.23;
+  letter-spacing: -.03em;
+}
+
+body.magnet-water .b-path-4 .b-time-columns {
+  gap: clamp(24px, 4cqi, 56px);
+}
+
+body.magnet-water .b-path-4 .b-time-columns article {
+  padding: 26px 0 0;
+  border: 0;
+  border-top: 1px solid rgba(46, 16, 43, .34);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body.magnet-water .b-path-4 .b-time-columns article:first-child {
+  padding-top: 24px;
+  border-top: 3px solid #702132;
+}
+
+body.magnet-water .b-path-4 .b-time-label {
+  margin-bottom: 22px;
+  font-size: 11px;
+  color: #702132;
+}
+
+body.magnet-water .b-path-4 .b-time-columns h3 {
+  font-size: clamp(23px, 2.2cqi, 30px);
+  line-height: 1.35;
+}
+
+body.magnet-water .b-path-4 .b-time-columns p {
+  max-width: 35ch;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #482c3e;
+}
+
+body.magnet-water .b-path-4 footer {
+  margin-top: 45px;
+  padding-top: 30px;
+  border-top-color: rgba(46, 16, 43, .25);
+}
+
+body.magnet-water .b-path-4 footer p {
+  max-width: 40ch;
+  color: #684052;
+}
+
+body.magnet-water .b-path-4 .study-action {
+  min-height: 48px;
+  background: #2e102b;
+  border-color: #2e102b;
+  color: #fff7ec;
+}
+
+body.magnet-water .b-path-4 .study-action:hover {
+  background: #702132;
+  border-color: #702132;
+  color: #fff7ec;
+}
+
+@container study (max-width: 680px) {
+  body.magnet-water :is(.b-now-2, .b-practice-2, .b-path-4) {
+    --mw-b-inset: 26px;
+    padding-top: 76px;
+    padding-bottom: 82px;
+  }
+  body.magnet-water .b-now-2 { min-height: 660px; }
+  body.magnet-water .b-now-2 .b-honest-line { font-size: 32px; margin-bottom: 32px; }
+  body.magnet-water .b-practice-2 { min-height: 720px; }
+  body.magnet-water .b-practice-2 .b-quiet-question { font-size: 33px; }
+  body.magnet-water .b-practice-2 .b-prompt-orbit { width: 480px; height: 580px; max-width: none; }
+  body.magnet-water .b-path-4 { min-height: 0; }
+  body.magnet-water .b-path-4 header { margin-bottom: 42px; }
+  body.magnet-water .b-path-4 h2 { font-size: 34px; }
+  body.magnet-water .b-path-4 .b-time-columns { grid-template-columns: 1fr; gap: 27px; }
+  body.magnet-water .b-path-4 .b-time-label { margin-bottom: 13px; }
+  body.magnet-water .b-path-4 .b-time-columns p { max-width: 48ch; margin-bottom: 0; }
+  body.magnet-water .b-path-4 footer { display: block; margin-top: 38px; }
+  body.magnet-water .b-path-4 footer .study-action { margin-top: 24px; }
+}
+
+/* Full-page fallback when the document is not inside the study container. */
+@media (max-width: 720px) {
+  body.magnet-water :is(.b-now-2, .b-practice-2, .b-path-4) {
+    --mw-b-inset: 26px;
+    padding-top: 76px;
+    padding-bottom: 82px;
+  }
+  body.magnet-water .b-now-2 { min-height: 660px; }
+  body.magnet-water .b-now-2 .b-honest-line { font-size: 32px; margin-bottom: 32px; }
+  body.magnet-water .b-practice-2 { min-height: 720px; }
+  body.magnet-water .b-practice-2 .b-quiet-question { font-size: 33px; }
+  body.magnet-water .b-practice-2 .b-prompt-orbit { width: 480px; height: 580px; max-width: none; }
+  body.magnet-water .b-path-4 { min-height: 0; }
+  body.magnet-water .b-path-4 header { margin-bottom: 42px; }
+  body.magnet-water .b-path-4 h2 { font-size: 34px; }
+  body.magnet-water .b-path-4 .b-time-columns { grid-template-columns: 1fr; gap: 27px; }
+  body.magnet-water .b-path-4 .b-time-label { margin-bottom: 13px; }
+  body.magnet-water .b-path-4 .b-time-columns p { max-width: 48ch; margin-bottom: 0; }
+  body.magnet-water .b-path-4 footer { display: block; margin-top: 38px; }
+  body.magnet-water .b-path-4 footer .study-action { margin-top: 24px; }
+}
