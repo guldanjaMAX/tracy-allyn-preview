@@ -1,4 +1,4 @@
-/* Approved Speaking 4A and Writing 5A. All rules stay below the existing hero. */
+/* Full homepage sequence. All rules stay below the existing approved hero. */
 .homepage-sections {
   container: home / inline-size;
   width: 100%;
@@ -81,4 +81,44 @@
 @media (prefers-reduced-motion: reduce) {
   .homepage-sections .hp-b-article-card { transition: none; }
   .homepage-sections .hp-b-article-card:hover { transform: none; }
+}
+
+/* Complete the homepage with the board's current bridge, About and closing. */
+.homepage-sections .hp-bridge-center { min-height: 670px; padding: 120px 8%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.homepage-sections .hp-bridge-center .hp-title { max-width: 16ch; font-size: clamp(44px,5.5cqi,76px); }
+.homepage-sections .hp-bridge-center .hp-copy { max-width: 45ch; }
+.homepage-sections .hp-bridge-center .hp-actions { justify-content: center; }
+
+.homepage-sections .hp-about-0 { background: #2e102b; color: #f4efee !important; min-height: 790px; }
+.homepage-sections .hp-about-face { position: absolute; inset: 0 43% 0 0; }
+.homepage-sections .hp-about-face img { width: 100%; height: 100%; object-fit: cover; object-position: 35% 24%; }
+.homepage-sections .hp-about-face::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg,transparent 70%,#2e102b); }
+.homepage-sections .hp-about-intro { width: 52%; margin-left: auto; margin-right: 0; padding: 110px 6% 110px 2%; min-height: 790px; display: flex; flex-direction: column; justify-content: center; }
+.homepage-sections .hp-about-intro .hp-title { font-size: clamp(34px,3.9cqi,56px); max-width: 20ch; }
+.homepage-sections .hp-about-intro .hp-copy { font-size: 18px; }
+.homepage-sections .hp-about-intro .hp-button { background: #d4b79d; color: #2e102b; border-color: #d4b79d; }
+
+.homepage-sections .hp-b-closing-quiet { position: relative; z-index: 1; min-height: 660px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 100px 7%; }
+.homepage-sections .hp-b-closing-center { max-width: 850px; }
+.homepage-sections .hp-b-closing-center .hp-title { font-size: clamp(60px,9cqi,130px); line-height: 1.05; max-width: 12ch; margin-left: auto; margin-right: auto; }
+.homepage-sections .hp-b-closing-center .hp-copy { max-width: 45ch; margin: 25px auto 0; font-size: 20px; }
+.homepage-sections .hp-b-closing-center .hp-actions { justify-content: center; margin-top: 35px; }
+
+@container home (max-width: 850px) {
+  .homepage-sections .hp-about-intro { padding-right: 5%; }
+}
+@container home (max-width: 700px) {
+  .homepage-sections .hp-about-intro .hp-title { font-size: 34px; line-height: 1.2; }
+  .homepage-sections .hp-b-closing-quiet { min-height: 560px; padding: 85px 8%; }
+  .homepage-sections .hp-b-closing-center .hp-title { font-size: 67px; }
+  .homepage-sections .hp-b-closing-center .hp-copy { font-size: 18px; }
+}
+@container home (max-width: 600px) {
+  .homepage-sections .hp-bridge-center { padding: 80px 8%; min-height: 560px; }
+  .homepage-sections .hp-bridge-center .hp-title { font-size: 42px; }
+  .homepage-sections .hp-about-0 { min-height: 0; }
+  .homepage-sections .hp-about-face { position: relative; inset: auto; height: 430px; }
+  .homepage-sections .hp-about-face img { object-position: 35% 22%; }
+  .homepage-sections .hp-about-face::after { background: linear-gradient(transparent 80%,#2e102b); }
+  .homepage-sections .hp-about-intro { width: 100%; min-height: 0; padding: 30px 8% 70px; }
 }
