@@ -1,0 +1,68 @@
+/* Six selected essays. Live text stays over continuous photographic panels. */
+.homepage-sections .wl-section { overflow: visible; background: radial-gradient(ellipse at 85% 15%,rgba(112,33,50,.17),transparent 60%),#2e102b; color: #f4efee; }
+.homepage-sections .wl-section *, .homepage-sections .wl-section *::before, .homepage-sections .wl-section *::after { box-sizing: border-box; }
+.homepage-sections .wl-inner { width: min(90%,1440px); margin-inline: auto; padding-block: 85px 88px; }
+.homepage-sections .wl-intro { display: flex; align-items: center; justify-content: space-between; gap: 28px 48px; margin-bottom: 42px; }
+.homepage-sections .wl-intro-copy { min-width: 0; }
+.homepage-sections .wl-section .wl-eyebrow { margin: 0 0 17px; color: #d4b79d; font: 500 12px/1.6 Figtree,Arial,sans-serif; letter-spacing: .16em; text-transform: uppercase; }
+.homepage-sections .wl-section .wl-heading { margin: 0; color: #f4efee; font: 500 clamp(44px,4.6cqi,66px)/1.12 Quicksand,Arial,sans-serif; letter-spacing: -.04em; overflow-wrap: break-word; }
+.homepage-sections .wl-section .wl-description { margin: 20px 0 0; max-width: 54ch; color: #f4efee; font: 400 19px/1.65 Figtree,Arial,sans-serif; }
+.homepage-sections .wl-section .wl-more-link { display: inline-flex; align-items: center; flex-shrink: 0; gap: 15px; min-height: 44px; color: #f4efee; font: 400 17px/1.5 Figtree,Arial,sans-serif; text-decoration: underline; text-decoration-color: #d4b79d; text-underline-offset: 8px; }
+.homepage-sections .wl-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
+.homepage-sections .wl-panel { position: relative; isolation: isolate; display: flex; flex-direction: column; min-width: 0; min-height: clamp(560px,44cqi,650px); margin: 0; overflow: hidden; border: 1px solid rgba(212,183,157,.2); border-radius: 6px; background: #2e102b; color: #f4efee; }
+.homepage-sections .wl-media { position: absolute; z-index: -2; inset: 0; overflow: hidden; }
+.homepage-sections .wl-media img { display: block; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: center; }
+.homepage-sections .wl-panel::after { content: ''; position: absolute; z-index: -1; inset: 0; background: rgba(46,16,43,.22); pointer-events: none; }
+.homepage-sections .wl-card-copy { padding: 30px 28px 55px; background: linear-gradient(180deg,rgba(46,16,43,.68) 0%,rgba(46,16,43,.68) calc(100% - 28px),rgba(46,16,43,0) 100%); }
+.homepage-sections .wl-section .wl-card-title { margin: 0; color: #f4efee; font: 500 clamp(27px,2.45cqi,35px)/1.18 Quicksand,Arial,sans-serif; letter-spacing: -.025em; overflow-wrap: break-word; text-wrap: balance; }
+.homepage-sections .wl-section .wl-card-description { margin: 16px 0 0; color: #f4efee; font: 400 17px/1.55 Figtree,Arial,sans-serif; overflow-wrap: break-word; }
+.homepage-sections .wl-card-bottom { margin-top: auto; padding: 30px 28px 24px; background: linear-gradient(0deg,rgba(46,16,43,.86) 0%,rgba(46,16,43,.78) 72%,rgba(46,16,43,0) 100%); }
+.homepage-sections .wl-section .wl-read { display: inline-flex; align-items: center; gap: 13px; max-width: 100%; min-height: 44px; color: #f4efee; font: 500 17px/1.5 Figtree,Arial,sans-serif; text-decoration: underline; text-decoration-color: #d4b79d; text-underline-offset: 7px; }
+.homepage-sections .wl-arrow { flex: none; color: #d4b79d; font: 400 22px/1 Figtree,Arial,sans-serif; }
+/* Preserve Tracy's supplied likeness. The same photo's wall fills the panel;
+   a lower, softly blended instance keeps her face below the overlaid copy. */
+.homepage-sections .wl-portrait .wl-wall { width: 200%; transform: translateX(-50%); object-position: right center; }
+.homepage-sections .wl-portrait .wl-portrait-photo { position: absolute; inset: auto 0 0; height: 66%; object-position: left top; -webkit-mask-image: linear-gradient(180deg,transparent 0%,#000 22%,#000 100%); mask-image: linear-gradient(180deg,transparent 0%,#000 22%,#000 100%); }
+.homepage-sections .wl-more { margin-top: 42px; text-align: center; }
+.homepage-sections .wl-section .wl-more-button { display: inline-flex; align-items: center; justify-content: center; gap: 24px; min-height: 58px; max-width: 100%; padding: 16px 42px; border: 1px solid #d4b79d; border-radius: 4px; background: #d4b79d; color: #2e102b; font: 500 21px/1.4 Quicksand,Arial,sans-serif; text-decoration: none; }
+.homepage-sections .wl-more-button .wl-arrow { color: #2e102b; }
+.homepage-sections .wl-section .wl-more-caption { margin: 12px 0 0; color: #d4b79d; font: 400 14px/1.5 Figtree,Arial,sans-serif; }
+.homepage-sections .wl-section a:focus-visible { outline: 3px solid #f4efee; outline-offset: 6px; }
+.homepage-sections .wl-section a:hover { text-decoration: underline; text-decoration-thickness: 2px; }
+@container home (max-width: 1100px) {
+  .homepage-sections .wl-inner { width: 90%; }
+  .homepage-sections .wl-card-copy { padding: 26px 23px 51px; }
+  .homepage-sections .wl-card-bottom { padding-inline: 23px; }
+  .homepage-sections .wl-section .wl-card-description { font-size: 16px; }
+}
+@container home (max-width: 950px) {
+  .homepage-sections .wl-inner { padding-block: 64px 68px; }
+  .homepage-sections .wl-intro { align-items: flex-start; flex-direction: column; gap: 22px; margin-bottom: 32px; }
+  .homepage-sections .wl-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .homepage-sections .wl-panel { min-height: 550px; }
+  .homepage-sections .wl-section .wl-card-title { font-size: 30px; }
+  .homepage-sections .wl-section .wl-card-description { font-size: 17px; }
+}
+@container home (max-width: 600px) {
+  .homepage-sections .wl-inner { width: calc(100% - 36px); padding-block: 55px 60px; }
+  .homepage-sections .wl-intro { gap: 18px; margin-bottom: 29px; }
+  .homepage-sections .wl-section .wl-eyebrow { font-size: 11px; letter-spacing: .12em; margin-bottom: 15px; }
+  .homepage-sections .wl-section .wl-heading { font-size: clamp(36px,8.5cqi,48px); }
+  .homepage-sections .wl-section .wl-description { margin-top: 16px; font-size: 17px; }
+  .homepage-sections .wl-grid { grid-template-columns: minmax(0,1fr); gap: 16px; }
+  .homepage-sections .wl-panel { min-height: 420px; }
+  .homepage-sections .wl-portrait { min-height: 480px; }
+  .homepage-sections .wl-portrait .wl-portrait-photo { height: 58%; }
+  .homepage-sections .wl-card-copy { padding: 27px 24px 53px; }
+  .homepage-sections .wl-card-bottom { padding: 30px 24px 22px; }
+  .homepage-sections .wl-section .wl-card-title { font-size: 30px; max-width: 22ch; }
+  .homepage-sections .wl-section .wl-card-description { max-width: 36ch; margin-top: 15px; }
+  .homepage-sections .wl-more { margin-top: 30px; }
+  .homepage-sections .wl-section .wl-more-button { width: min(100%,360px); padding-inline: 22px; font-size: 21px; }
+}
+@container home (max-width: 360px) {
+  .homepage-sections .wl-card-copy { padding-inline: 20px; }
+  .homepage-sections .wl-card-bottom { padding-inline: 20px; }
+  .homepage-sections .wl-section .wl-card-title { font-size: 28px; }
+  .homepage-sections .wl-section .wl-card-description { font-size: 16px; }
+}
