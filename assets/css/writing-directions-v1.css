@@ -1,0 +1,140 @@
+/* Review-only Writing variants. Every selector is scoped below the homepage. */
+.homepage-sections .wd-section { position: relative; isolation: isolate; overflow: visible; width: 100%; background: #2e102b; color: #f4efee; font: 400 18px/1.7 Figtree, Arial, sans-serif; }
+.homepage-sections .wd-section *, .homepage-sections .wd-section *::before, .homepage-sections .wd-section *::after { box-sizing: border-box; }
+.homepage-sections .wd-section h2, .homepage-sections .wd-section h3, .homepage-sections .wd-section p { margin: 0; overflow-wrap: break-word; }
+.homepage-sections .wd-section a { color: inherit; text-decoration: none; }
+.homepage-sections .wd-section a:focus-visible { outline: 3px solid #d4b79d; outline-offset: 5px; }
+.homepage-sections .wd-section img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.homepage-sections .wd-intro { position: relative; z-index: 1; }
+.homepage-sections .wd-heading { font: 500 clamp(56px, 4.5cqi, 62px)/1.13 Quicksand, Arial, sans-serif; letter-spacing: -.045em; }
+.homepage-sections .wd-copy { max-width: 54ch; font: 400 18px/1.75 Figtree, Arial, sans-serif; }
+.homepage-sections .wd-section .wd-copy { margin-top: 23px; }
+.homepage-sections .wd-actions { margin-top: 28px; }
+.homepage-sections .wd-button { display: inline-flex; align-items: center; justify-content: center; gap: 25px; min-height: 50px; padding: 14px 22px; border: 1px solid #d4b79d; background: #d4b79d; color: #2e102b !important; font: 400 13px/1.5 Figtree, Arial, sans-serif; }
+.homepage-sections .wd-arrow { flex-shrink: 0; line-height: 1; font: 400 21px/1 Figtree, Arial, sans-serif; }
+.homepage-sections .wd-section h3 { font: 500 31px/1.25 Quicksand, Arial, sans-serif; letter-spacing: -.035em; }
+.homepage-sections .wd-section .wd-window { position: relative; display: flex; align-items: flex-end; min-width: 0; background: #2e102b; color: #f4efee; }
+.homepage-sections .wd-window-image { position: absolute; inset: 0; }
+.homepage-sections .wd-overlay-copy { position: relative; z-index: 1; isolation: isolate; display: flex; align-items: flex-end; justify-content: space-between; gap: 22px; width: 100%; padding: 32px 34px; }
+.homepage-sections .wd-overlay-copy::before { content: ''; position: absolute; z-index: -1; inset: -80px 0 0; background: linear-gradient(180deg,rgba(46,16,43,0) 0,rgba(46,16,43,.88) 80px,rgba(46,16,43,.98) 100%); pointer-events: none; }
+.homepage-sections .wd-overlay-copy h3 { max-width: 25ch; }
+.homepage-sections .wd-window .wd-arrow { padding-bottom: 5px; }
+.homepage-sections .wd-section a:hover h3 { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .15em; }
+.homepage-sections .wd-button:hover { background: #f4efee; border-color: #f4efee; }
+
+/* A: full-width soft light, one larger feature and two open reading rows. */
+.homepage-sections .wd-a { color: #2e102b; background: #f4efee; }
+.homepage-sections .wd-a a:focus-visible { outline-color: #702132; }
+.homepage-sections .wd-light-field { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.homepage-sections .wd-light-field::after { content: ''; position: absolute; inset: 0; background: rgba(244,239,238,.82); }
+.homepage-sections .wd-a-inner { position: relative; width: min(88%, 1280px); margin-inline: auto; padding-block: 82px 86px; }
+.homepage-sections .wd-a .wd-button { background: #2e102b; border-color: #2e102b; color: #f4efee !important; }
+.homepage-sections .wd-a .wd-button:hover { background: #702132; border-color: #702132; }
+.homepage-sections .wd-a-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 38px; margin-top: 47px; }
+.homepage-sections .wd-feature { min-height: 420px; }
+.homepage-sections .wd-feature .wd-window-image { object-position: 35% 16%; }
+.homepage-sections .wd-feature h3 { max-width: 17ch; font-size: 40px; }
+.homepage-sections .wd-a-side { display: grid; grid-template-rows: repeat(2,minmax(190px,1fr)); gap: 20px; min-width: 0; }
+.homepage-sections .wd-row { display: grid; grid-template-columns: 150px minmax(0,1fr); align-items: center; gap: 24px; min-width: 0; min-height: 190px; padding-block: 19px; border-bottom: 1px solid rgba(46,16,43,.23); }
+.homepage-sections .wd-row-image { display: block; width: 150px; aspect-ratio: 1; }
+.homepage-sections .wd-row-copy { display: flex; align-items: flex-start; flex-direction: column; gap: 16px; min-width: 0; }
+.homepage-sections .wd-row h3 { font-size: 28px; }
+
+/* B: the author image becomes the full-width scene, then a transparent reading rail. */
+.homepage-sections .wd-b-top { position: relative; min-height: 500px; }
+.homepage-sections .wd-b-portrait { position: absolute; inset: 0 0 0 46%; overflow: hidden; }
+.homepage-sections .wd-b-portrait img { object-position: 50% 35%; }
+.homepage-sections .wd-b-portrait::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg,#2e102b 0%,rgba(46,16,43,.78) 15%,rgba(46,16,43,.06) 48%),linear-gradient(0deg,#2e102b 0%,rgba(46,16,43,.1) 30%,rgba(46,16,43,0) 65%); }
+.homepage-sections .wd-b-intro { position: relative; width: min(88%, 1280px); margin-inline: auto; padding-block: 88px 80px; }
+.homepage-sections .wd-b-intro .wd-intro { width: 47%; }
+.homepage-sections .wd-b .wd-copy { max-width: 40ch; }
+.homepage-sections .wd-reading-rail { position: relative; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 0; width: min(88%,1280px); margin-inline: auto; padding-bottom: 28px; border-top: 1px solid rgba(244,239,238,.27); }
+.homepage-sections .wd-rail-link { display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; gap: 24px; min-width: 0; min-height: 200px; padding: 31px 32px 28px; border-right: 1px solid rgba(244,239,238,.2); }
+.homepage-sections .wd-rail-link:first-child { padding-left: 0; }
+.homepage-sections .wd-rail-link:last-child { padding-right: 0; border-right: 0; }
+.homepage-sections .wd-rail-link h3 { font-size: 30px; max-width: 22ch; }
+.homepage-sections .wd-rail-link .wd-arrow { color: #d4b79d; }
+
+/* C: continuous plum, with three adjacent photographic windows. */
+.homepage-sections .wd-c-field { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.homepage-sections .wd-c-field::after { content: ''; position: absolute; inset: 0; background: rgba(46,16,43,.92); }
+.homepage-sections .wd-c-intro { position: relative; width: min(88%,1280px); margin-inline: auto; padding-block: 82px 48px; }
+.homepage-sections .wd-windows { position: relative; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; padding-bottom: 10px; }
+.homepage-sections .wd-windows .wd-window { min-height: 420px; }
+.homepage-sections .wd-window-portrait .wd-window-image { object-position: 28% 20%; }
+.homepage-sections .wd-windows .wd-overlay-copy { padding: 30px 28px; gap: 16px; }
+.homepage-sections .wd-windows h3 { font-size: clamp(28px,2.55cqi,36px); }
+
+@container home (max-width: 950px) {
+  .homepage-sections .wd-heading { font-size: 50px; }
+  .homepage-sections .wd-a-inner { padding-block: 64px 68px; }
+  .homepage-sections .wd-a-grid { grid-template-columns: minmax(0,1.35fr) minmax(0,1fr); gap: 24px; margin-top: 37px; }
+  .homepage-sections .wd-row { grid-template-columns: 106px minmax(0,1fr); gap: 17px; }
+  .homepage-sections .wd-row-image { width: 106px; }
+  .homepage-sections .wd-row h3 { font-size: 24px; }
+  .homepage-sections .wd-feature h3 { font-size: 34px; }
+  .homepage-sections .wd-feature .wd-overlay-copy { padding: 26px; }
+  .homepage-sections .wd-b-top { min-height: 0; }
+  .homepage-sections .wd-b-portrait { position: relative; inset: auto; height: 340px; width: 100%; }
+  .homepage-sections .wd-b-portrait::after { background: linear-gradient(0deg,#2e102b 0%,rgba(46,16,43,.55) 14%,rgba(46,16,43,0) 48%); }
+  .homepage-sections .wd-b-intro { padding-block: 30px 48px; }
+  .homepage-sections .wd-b-intro .wd-intro { width: 100%; }
+  .homepage-sections .wd-b .wd-copy { max-width: 54ch; }
+  .homepage-sections .wd-rail-link { padding-inline: 22px; }
+  .homepage-sections .wd-rail-link h3 { font-size: 26px; }
+  .homepage-sections .wd-c-intro { padding-block: 64px 38px; }
+  .homepage-sections .wd-windows { grid-template-columns: minmax(0,1fr); }
+  .homepage-sections .wd-windows .wd-window { min-height: 260px; }
+  .homepage-sections .wd-window-portrait .wd-window-image { object-position: 35% 13%; }
+  .homepage-sections .wd-windows .wd-overlay-copy { padding: 28px 6%; }
+  .homepage-sections .wd-windows h3 { font-size: 31px; }
+}
+/* Let the feature breathe before the side stories become narrow on tablets. */
+@container home (max-width: 760px) {
+  .homepage-sections .wd-a-grid { grid-template-columns: minmax(0,1fr); }
+  .homepage-sections .wd-feature { min-height: 340px; aspect-ratio: 16 / 10; }
+  .homepage-sections .wd-a-side { grid-template-rows: auto; gap: 0; }
+  .homepage-sections .wd-row { min-height: 150px; }
+}
+@container home (max-width: 600px) {
+  .homepage-sections .wd-heading { font-size: 40px; }
+  .homepage-sections .wd-copy { font-size: 17px; line-height: 1.75; }
+  .homepage-sections .wd-section .wd-copy { margin-top: 21px; }
+  .homepage-sections .wd-actions { margin-top: 25px; }
+  .homepage-sections .wd-a-inner { width: 88%; padding-block: 54px 58px; }
+  .homepage-sections .wd-a-grid { grid-template-columns: minmax(0,1fr); gap: 22px; margin-top: 32px; }
+  .homepage-sections .wd-feature { min-height: 240px; aspect-ratio: 16 / 10; }
+  .homepage-sections .wd-feature .wd-window-image { object-position: 35% 13%; }
+  .homepage-sections .wd-feature .wd-overlay-copy { padding: 20px; gap: 16px; }
+  .homepage-sections .wd-feature h3 { font-size: 28px; }
+  .homepage-sections .wd-a-side { grid-template-rows: auto; gap: 0; }
+  .homepage-sections .wd-row { grid-template-columns: 96px minmax(0,1fr); min-height: 140px; gap: 18px; padding-block: 22px; }
+  .homepage-sections .wd-row-image { width: 96px; }
+  .homepage-sections .wd-row h3 { font-size: 24px; }
+  .homepage-sections .wd-row-copy { gap: 13px; }
+  .homepage-sections .wd-b-portrait { height: 300px; }
+  .homepage-sections .wd-b-intro { padding-block: 27px 42px; }
+  .homepage-sections .wd-reading-rail { grid-template-columns: minmax(0,1fr); padding-bottom: 20px; }
+  .homepage-sections .wd-rail-link, .homepage-sections .wd-rail-link:first-child, .homepage-sections .wd-rail-link:last-child { flex-direction: row; align-items: center; min-height: 0; padding: 27px 0; border-right: 0; border-bottom: 1px solid rgba(244,239,238,.2); }
+  .homepage-sections .wd-rail-link:last-child { border-bottom: 0; }
+  .homepage-sections .wd-rail-link h3 { font-size: 26px; }
+  .homepage-sections .wd-c-intro { padding-block: 54px 34px; }
+  .homepage-sections .wd-windows .wd-window { min-height: 240px; }
+  .homepage-sections .wd-windows .wd-overlay-copy { padding: 25px 6%; }
+  .homepage-sections .wd-windows h3 { font-size: 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .homepage-sections .wd-section a, .homepage-sections .wd-section img { animation: none; transition: none; }
+}
+
+/* Preview controls only; each direction keeps the actual homepage around it. */
+.wd-review { position: fixed; z-index: 40; left: 50%; bottom: max(16px, env(safe-area-inset-bottom)); transform: translateX(-50%); display: flex; align-items: center; gap: 6px; max-width: calc(100% - 24px); padding: 7px; border: 1px solid rgba(212,183,157,.35); border-radius: 40px; background: rgba(35,12,32,.97); box-shadow: 0 5px 24px rgba(20,6,19,.22); font: 400 13px/1.3 Figtree,Arial,sans-serif; color: #f4efee; }
+.wd-review-label { padding: 0 12px; white-space: nowrap; color: #d4b79d; }
+.wd-review a { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 44px; padding: 9px 15px; border-radius: 30px; color: #f4efee; text-decoration: none; white-space: nowrap; }
+.wd-review a[aria-current="page"] { color: #2e102b; background: #d4b79d; }
+.wd-review a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.wd-review a:focus-visible { outline: 2px solid #d4b79d; outline-offset: 3px; }
+.wd-review .wd-review-current { border-left: 1px solid rgba(212,183,157,.24); border-radius: 0; padding-left: 16px; margin-left: 3px; }
+.wd-review-number { opacity: .72; }
+@media (max-width: 700px) { .wd-review-label { display: none; } .wd-review { gap: 2px; padding: 5px; } .wd-review a { padding: 8px 10px; font-size: 12px; } .wd-review .wd-review-current { padding-left: 10px; margin-left: 1px; } }
+@media (max-width: 370px) { .wd-review a { padding: 8px; font-size: 11px; gap: 4px; } .wd-review .wd-review-current { padding-left: 8px; } }
