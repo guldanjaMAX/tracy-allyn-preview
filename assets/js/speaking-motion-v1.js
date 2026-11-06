@@ -1,0 +1,143 @@
+(function () {
+  'use strict';
+  var section = document.getElementById('speaking');
+  var media = document.getElementById('speaking-media');
+  var video = document.getElementById('speaking-video');
+  if (!section || !media || !video) return;
+  var device = window.matchMedia('(max-width: 950px)');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  var visible = false;
+  var blocked = false, failed = false, pending = false;
+  var source = '', version = 0, attempt = 0;
+
+  video.muted = true;
+  video.defaultMuted = true;
+  video.playsInline = true;
+  video.loop = true;
+
+  function motionAllowed() {
+    return !reduced.matches && !(connection && connection.saveData);
+  }
+  function eligible() {
+    return visible && !document.hidden && motionAllowed() && !!desiredSource() && !blocked && !failed;
+  }
+  function stop(hide) {
+    attempt += 1;
+    pending = false;
+    video.autoplay = false;
+    video.pause();
+    if (hide) video.classList.remove('is-playing');
+  }
+  function unload() {
+    version += 1;
+    stop(true);
+    source = '';
+    video.preload = 'none';
+    video.removeAttribute('src');
+    video.load();
+  }
+  function desiredSource() {
+    return video.getAttribute(device.matches ? 'data-mobile' : 'data-desktop');
+  }
+  function play() {
+    if (!eligible() || pending) return;
+    var selected = desiredSource();
+    if (!selected) return;
+    if (source !== selected) {
+      unload();
+      source = selected;
+      video.preload = 'auto';
+      video.src = source;
+      video.load();
+    }
+    if (!video.paused) return;
+    var thisVersion = version, thisAttempt = ++attempt;
+    pending = true;
+    video.autoplay = true;
+    function rejected(error) {
+      if (thisVersion !== version || thisAttempt !== attempt) return;
+      pending = false;
+      if (error && error.name === 'AbortError') return;
+      blocked = true;
+      stop(true);
+    }
+    try {
+      var promise = video.play();
+      if (promise && promise.then) promise.then(function () {
+        if (thisVersion !== version || thisAttempt !== attempt) return;
+        pending = false;
+        if (!eligible()) stop(false);
+      }, rejected);
+      else pending = false;
+    } catch (error) { rejected(error); }
+  }
+  function sync() {
+    if (eligible()) play();
+    else stop(!motionAllowed());
+  }
+
+  video.addEventListener('playing', function () {
+    if (!eligible()) { stop(!motionAllowed()); return; }
+    pending = false;
+    blocked = false;
+    video.classList.add('is-playing');
+  });
+  video.addEventListener('canplay', play);
+  video.addEventListener('error', function () {
+    if (!source) return;
+    failed = true;
+    stop(true);
+  });
+  document.addEventListener('visibilitychange', sync);
+  window.addEventListener('pagehide', function () { stop(false); });
+  window.addEventListener('pageshow', sync);
+
+  function deviceChanged() {
+    blocked = false;
+    failed = false;
+    unload();
+    sync();
+  }
+  function preferencesChanged() {
+    blocked = false;
+    if (!motionAllowed()) unload();
+    sync();
+  }
+  function listen(query, callback) {
+    if (query.addEventListener) query.addEventListener('change', callback);
+    else if (query.addListener) query.addListener(callback);
+  }
+  listen(device, deviceChanged);
+  listen(reduced, preferencesChanged);
+  if (connection && connection.addEventListener) connection.addEventListener('change', preferencesChanged);
+
+  // Observe the visible image band, not the longer copy section. On mobile this
+  // stops the decoder as soon as the visual leaves the viewport above the copy.
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.target !== media) return;
+        visible = entry.isIntersecting && entry.intersectionRatio > 0;
+        sync();
+      });
+    }, {threshold: [0, 0.01]});
+    observer.observe(media);
+  } else {
+    var queued = false;
+    function checkPosition() {
+      queued = false;
+      var box = media.getBoundingClientRect();
+      visible = box.bottom > 0 && box.top < window.innerHeight;
+      sync();
+    }
+    function schedulePositionCheck() {
+      if (queued) return;
+      queued = true;
+      window.requestAnimationFrame(checkPosition);
+    }
+    window.addEventListener('scroll', schedulePositionCheck, {passive: true});
+    window.addEventListener('resize', schedulePositionCheck);
+    checkPosition();
+  }
+})();

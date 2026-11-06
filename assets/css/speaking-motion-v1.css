@@ -1,0 +1,43 @@
+/* Add after homepage-sections-v1.css. Preserve its approved layout and scrim. */
+.homepage-sections .hp-speaking-motion > .hp-speaking-media .hp-speaking-poster {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+.homepage-sections .hp-speaking-motion > .hp-speaking-media .hp-speaking-film {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: 62% 32%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .24s ease;
+}
+.homepage-sections .hp-speaking-motion > .hp-speaking-media .hp-speaking-film.is-playing {
+  opacity: 1;
+}
+/* Match the existing top-image-band layout, including its 410px / 330px heights. */
+@container home (max-width: 950px) {
+  .homepage-sections .hp-speaking-motion > .hp-speaking-media .hp-speaking-film {
+    object-position: 50% 32%;
+  }
+  .homepage-sections .hp-speaking-motion > .hp-speaking-media .hp-speaking-poster.has-mobile-poster img {
+    object-position: 50% 32% !important;
+  }
+}
+@container home (max-width: 600px) {
+  .homepage-sections .hp-speaking-motion > .hp-speaking-media .hp-speaking-film {
+    object-position: 50% top;
+  }
+  .homepage-sections .hp-speaking-motion > .hp-speaking-media .hp-speaking-poster.has-mobile-poster img {
+    object-position: 50% top !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .homepage-sections .hp-speaking-motion > .hp-speaking-media .hp-speaking-film {
+    transition: none;
+  }
+}
