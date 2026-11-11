@@ -22,7 +22,7 @@
 @media (max-width: 1000px) {
   .homepage-sections .hp-bridge-video { min-height: 900px; display: block; }
   .homepage-sections .hp-bridge-poster img,
-  .homepage-sections .hp-bridge-film { object-position: center top; }
+  .homepage-sections .hp-bridge-film { bottom: auto; height: auto; aspect-ratio: 9 / 16; object-position: center top; }
   .homepage-sections .hp-bridge-media::after { background: linear-gradient(180deg,rgba(244,239,238,.02) 15%,rgba(244,239,238,.05) 27%,rgba(244,239,238,.6) 38%,rgba(244,239,238,.96) 48%,#f4efee 68%); }
   .homepage-sections .hp-bridge-video-copy { width: 100%; padding: clamp(350px,94vw,520px) 8% 95px; }
   .homepage-sections .hp-bridge-video-copy .hp-title { max-width: 17ch; font-size: clamp(38px,8.8vw,52px); }
