@@ -1,0 +1,55 @@
+/* Six supplied endorsements. Scoped below the approved Writing section. */
+.homepage-sections .ts-section { overflow: visible; background: #2e102b; color: #f4efee; }
+.homepage-sections .ts-atmosphere { position: absolute; z-index: -2; inset: 0; overflow: hidden; pointer-events: none; }
+.homepage-sections .ts-atmosphere img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: .08; }
+.homepage-sections .ts-section::before { content: ''; position: absolute; z-index: -1; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 100% 0%,rgba(203,126,58,.13),transparent 42%),radial-gradient(ellipse at 0% 100%,rgba(203,126,58,.1),transparent 37%); }
+.homepage-sections .ts-inner { position: relative; width: min(88%,1360px); margin-inline: auto; padding-block: 88px 82px; }
+.homepage-sections .ts-intro { margin-bottom: 50px; }
+.homepage-sections .ts-section .ts-heading { margin: 0; color: #f4efee; font: 500 clamp(44px,4.6cqi,66px)/1.15 Quicksand,Arial,sans-serif; letter-spacing: -.04em; overflow-wrap: break-word; }
+.homepage-sections .ts-section .ts-subline { margin: 18px 0 0; color: #f4efee; font: 400 20px/1.6 Figtree,Arial,sans-serif; }
+.homepage-sections .ts-primary { display: grid; grid-template-columns: minmax(0,1.08fr) minmax(0,1fr); gap: 44px; align-items: start; }
+.homepage-sections .ts-section .ts-quote { min-width: 0; margin: 0; }
+.homepage-sections .ts-section .ts-quote blockquote { margin: 0; }
+.homepage-sections .ts-section .ts-quote p { margin: 0; color: #f4efee; font: 500 clamp(24px,2.05cqi,30px)/1.44 Quicksand,Arial,sans-serif; letter-spacing: -.015em; overflow-wrap: break-word; }
+.homepage-sections .ts-quote p::before { content: '“'; }
+.homepage-sections .ts-quote p::after { content: '”'; }
+.homepage-sections .ts-section .ts-quote figcaption { display: block; margin: 19px 0 0; color: #f4efee; font: 400 14px/1.6 Figtree,Arial,sans-serif; }
+.homepage-sections .ts-section .ts-lead { height: 100%; padding-right: 44px; border-right: 1px solid rgba(212,183,157,.62); }
+.homepage-sections .ts-section .ts-lead p { max-width: 20ch; font-size: clamp(36px,3.5cqi,50px); line-height: 1.32; letter-spacing: -.025em; }
+.homepage-sections .ts-section .ts-lead figcaption { margin-top: 26px; font-size: 15px; }
+.homepage-sections .ts-section .ts-emphasis { color: #d4b79d; }
+.homepage-sections .ts-support { min-width: 0; }
+.homepage-sections .ts-support .ts-quote + .ts-quote { margin-top: 28px; padding-top: 28px; border-top: 1px solid rgba(212,183,157,.62); }
+.homepage-sections .ts-secondary { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 30px; margin-top: 42px; padding-top: 38px; border-top: 1px solid rgba(212,183,157,.62); }
+.homepage-sections .ts-secondary .ts-quote + .ts-quote { padding-left: 30px; border-left: 1px solid rgba(212,183,157,.62); }
+.homepage-sections .ts-secondary .ts-quote p { font-size: clamp(23px,1.9cqi,28px); line-height: 1.45; }
+.homepage-sections .ts-section .ts-privacy { margin: 45px 0 0; color: #d4b79d; font: italic 400 14px/1.6 Figtree,Arial,sans-serif; }
+@container home (max-width: 1000px) {
+  .homepage-sections .ts-inner { padding-block: 70px 68px; }
+  .homepage-sections .ts-primary { gap: 30px; }
+  .homepage-sections .ts-section .ts-lead { padding-right: 30px; }
+  .homepage-sections .ts-secondary { gap: 24px; }
+  .homepage-sections .ts-secondary .ts-quote + .ts-quote { padding-left: 24px; }
+}
+@container home (max-width: 800px) {
+  .homepage-sections .ts-inner { width: 86%; padding-block: 58px 58px; }
+  .homepage-sections .ts-intro { margin-bottom: 34px; }
+  .homepage-sections .ts-primary { display: block; }
+  .homepage-sections .ts-section .ts-lead { height: auto; padding: 0; border: 0; }
+  .homepage-sections .ts-section .ts-quote p { max-width: 45ch; }
+  .homepage-sections .ts-section .ts-lead p { max-width: 28ch; font-size: 36px; }
+  .homepage-sections .ts-support .ts-quote { margin-top: 28px; padding-top: 28px; border-top: 1px solid rgba(212,183,157,.62); }
+  .homepage-sections .ts-secondary { display: block; margin-top: 28px; padding-top: 28px; }
+  .homepage-sections .ts-secondary .ts-quote + .ts-quote { margin-top: 28px; padding: 28px 0 0; border-left: 0; border-top: 1px solid rgba(212,183,157,.62); }
+  .homepage-sections .ts-secondary .ts-quote p { font-size: 24px; }
+  .homepage-sections .ts-section .ts-quote figcaption { margin-top: 15px; font-size: 14px; }
+  .homepage-sections .ts-section .ts-privacy { margin-top: 37px; }
+}
+@container home (max-width: 600px) {
+  .homepage-sections .ts-inner { width: calc(100% - 44px); padding-block: 52px 52px; }
+  .homepage-sections .ts-section .ts-heading { font-size: clamp(34px,8.8cqi,47px); }
+  .homepage-sections .ts-section .ts-subline { margin-top: 14px; font-size: 18px; }
+  .homepage-sections .ts-section .ts-quote p { font-size: 22px; line-height: 1.48; }
+  .homepage-sections .ts-section .ts-lead p { font-size: 30px; line-height: 1.36; }
+  .homepage-sections .ts-section .ts-quote figcaption { font-size: 13px; }
+}
