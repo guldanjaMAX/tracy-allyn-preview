@@ -13,7 +13,11 @@
   let wantsMotion = !reduceMotion.matches;
   let inView = !('IntersectionObserver' in window);
   let source = '';
-  let usingBackup = false;
+  let rendition = '';
+  let preferLight = false;
+  let resumeAt = 0;
+  let waitStarted = 0;
+  let recentStalls = [];
   let blocked = false;
   let failed = false;
   let hasPlayed = false;
@@ -52,6 +56,23 @@
     });
   }
 
+  function initialRendition() {
+    const connection = navigator.connection;
+    if (preferLight) return 'light';
+    if (!connection) return 'hd';
+    if (connection.saveData || ['slow-2g', '2g'].includes(connection.effectiveType)) return 'light';
+
+    // A fresh Chrome profile may report 1.6 Mbps even on a fast connection.
+    // Cross-check that estimate against the transfer of this same-origin page.
+    const navigation = performance.getEntriesByType('navigation')[0];
+    if (connection.downlink > 0 && connection.downlink < 3 && navigation &&
+        navigation.transferSize > 32768 && navigation.encodedBodySize > 32768) {
+      const elapsed = navigation.responseEnd - navigation.responseStart;
+      if (elapsed > 0 && navigation.encodedBodySize * 8 / elapsed / 1000 < 3.5) return 'light';
+    }
+    return 'hd';
+  }
+
   function bufferedEnd() {
     return video.buffered.length ? video.buffered.end(video.buffered.length - 1) : 0;
   }
@@ -65,25 +86,29 @@
     waitTimer = setTimeout(() => {
       if (attempt !== generation || !visible() || blocked || failed) return;
       if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA || video.currentTime !== position) return;
-      // Give a progressing first load time to buffer. A frozen request or a
-      // sustained mid-play stall gets one independent, smaller CDN rendition.
       if (!hasPlayed && bufferedEnd() > before + 0.05) watchWait();
-      else if (!usingBackup) load(true);
+      else if (hasPlayed && rendition === 'hd') load('light', true);
+      else if (rendition !== 'cdn') load('cdn', true);
       else showButton('Select Play video to retry the background video.');
     }, hasPlayed ? 8000 : 12000);
   }
 
-  function load(backup) {
+  function load(next, keepTime = false) {
+    resumeAt = keepTime ? video.currentTime : 0;
+    waitStarted = 0;
+    recentStalls = [];
     generation++;
     pending = false;
     failed = false;
     blocked = false;
     hasPlayed = false;
-    usingBackup = backup;
+    rendition = next;
+    if (next === 'light') preferLight = true;
     startButton.hidden = true;
     clearTimeout(waitTimer);
-    source = backup ? backupBase + 'tracy-hero-' + variant() + '-v2.mp4'
-                    : 'assets/videos/tracy-hero-' + variant() + '-1080-v1.mp4';
+    const videoName = 'tracy-hero-' + variant();
+    source = next === 'cdn' ? backupBase + videoName + '-v2.mp4'
+      : 'assets/videos/' + videoName + (next === 'light' ? '-light-v1.mp4' : '-1080-v1.mp4');
     video.classList.remove('is-visible');
     video.preload = 'auto';
     video.src = source;
@@ -95,8 +120,8 @@
 
   function recover() {
     if (failed || !source) return;
-    if (!usingBackup && visible()) {
-      load(true);
+    if (rendition !== 'cdn' && visible()) {
+      load('cdn', true);
       return;
     }
     failed = true;
@@ -107,6 +132,8 @@
 
   function sync() {
     if (!visible()) {
+      waitStarted = 0;
+      recentStalls = [];
       clearTimeout(waitTimer);
       pending = false;
       video.pause();
@@ -116,8 +143,8 @@
       }
       return;
     }
-    if (!source) load(false);
-    else if (failed && !usingBackup) load(true);
+    if (!source) load(initialRendition());
+    else if (failed && rendition !== 'cdn') load('cdn', true);
     else {
       play();
       if (!hasPlayed || video.readyState < HTMLMediaElement.HAVE_FUTURE_DATA) watchWait();
@@ -127,15 +154,33 @@
   startButton.addEventListener('click', () => {
     wantsMotion = true;
     blocked = false;
-    if (failed || !source) load(false);
-    else if (video.readyState < HTMLMediaElement.HAVE_FUTURE_DATA && !pending) load(usingBackup);
+    if (failed || !source) load(initialRendition());
+    else if (video.readyState < HTMLMediaElement.HAVE_FUTURE_DATA && !pending) load(rendition, true);
     else play();
+  });
+  video.addEventListener('loadedmetadata', () => {
+    if (resumeAt > 0 && Number.isFinite(video.duration)) {
+      video.currentTime = Math.min(resumeAt, video.duration - 0.05);
+      resumeAt = 0;
+    }
   });
   video.addEventListener('playing', () => {
     if (!visible()) {
       video.pause();
       return;
     }
+    if (hasPlayed && waitStarted && rendition === 'hd') {
+      const now = performance.now();
+      if (now - waitStarted >= 250) {
+        recentStalls = recentStalls.filter(end => now - end < 10000);
+        recentStalls.push(now);
+        if (recentStalls.length >= 2) {
+          load('light', true);
+          return;
+        }
+      }
+    }
+    waitStarted = 0;
     hasPlayed = true;
     pending = false;
     blocked = false;
@@ -146,7 +191,10 @@
   });
   video.addEventListener('canplay', play);
   video.addEventListener('error', recover);
-  video.addEventListener('waiting', watchWait);
+  video.addEventListener('waiting', () => {
+    if (visible() && hasPlayed && !video.seeking && !waitStarted) waitStarted = performance.now();
+    watchWait();
+  });
   video.addEventListener('stalled', watchWait);
 
   function resetSource() {
