@@ -1,0 +1,84 @@
+.homepage-sections .hp-about-breath {
+  display: grid;
+  grid-template-columns: 44% 56%;
+  min-height: clamp(560px, 46cqw, 810px);
+  color: #faf4f1;
+  background: #2e102b;
+}
+.hp-about-breath .breath-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 5cqw 2.3cqw 5cqw 6.15cqw;
+}
+.hp-about-breath .hp-title {
+  max-width: 13.3em;
+  margin: 0;
+  font: 500 clamp(40px, 3.73cqw, 77px)/1.095 var(--heading);
+  letter-spacing: -.062em;
+  text-wrap: pretty;
+}
+.hp-about-breath .hp-copy {
+  max-width: 33ch;
+  margin: 2cqw 0;
+  font-size: clamp(16px, 1.27cqw, 22px);
+  line-height: 1.55;
+  color: #ecdee5;
+  opacity: 1;
+}
+.hp-about-breath .hp-button {
+  min-height: 44px;
+  padding: 1em 1.44em;
+  gap: 2.2em;
+  font-size: clamp(14px, 1.05cqw, 18px);
+  font-weight: 500;
+}
+.hp-about-breath .breath-scene {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  margin: 0;
+  background: #392138;
+}
+.breath-scene img, .breath-scene video {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 104%;
+  object-fit: cover;
+  object-position: right bottom;
+}
+.breath-scene video { opacity: 0; }
+.breath-scene video.is-playing { opacity: 1; }
+.breath-scene::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, #2e102b, rgba(46,16,43,.76) 11%, transparent 32%),
+              linear-gradient(0deg, rgba(24,9,20,.83), rgba(24,9,20,.42) 13%, transparent 30%);
+}
+.breath-scene figcaption {
+  position: absolute;
+  z-index: 1;
+  bottom: 3.2cqw;
+  left: 5cqw;
+  right: 2cqw;
+  color: white;
+  font: 500 clamp(17px, 1.45cqw, 26px)/1.3 var(--body);
+  letter-spacing: -.015em;
+  text-shadow: 0 1px 5px #3a2d37;
+}
+@media (max-width: 720px) {
+  .homepage-sections .hp-about-breath { display: flex; flex-direction: column; min-height: 0; }
+  .hp-about-breath .breath-scene { order: -1; height: clamp(300px, 99cqw, 505px); }
+  .breath-scene::before { background: linear-gradient(0deg, rgba(24,9,20,.83), rgba(24,9,20,.44) 13%, transparent 30%); }
+  .breath-scene figcaption { bottom: 4.5cqw; left: 6cqw; right: auto; max-width: 16ch; font-size: clamp(16px, 4.3cqw, 20px); }
+  .hp-about-breath .breath-copy { padding: 8cqw 7cqw 9cqw; }
+  .hp-about-breath .hp-title { font-size: clamp(31px, 8.15cqw, 48px); line-height: 1.1; letter-spacing: -.054em; }
+  .hp-about-breath .hp-copy { margin: 4.8cqw 0 5.4cqw; font-size: clamp(16px, 4.1cqw, 19px); line-height: 1.48; }
+}

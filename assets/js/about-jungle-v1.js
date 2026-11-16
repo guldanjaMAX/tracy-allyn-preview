@@ -3,7 +3,7 @@
   var section = document.getElementById('about');
   var video = document.getElementById('about-video');
   if (!section || !video) return;
-  var device = window.matchMedia('(max-width: 1200px)');
+  var device = window.matchMedia(video.getAttribute('data-mobile-media') || '(max-width: 1200px)');
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
   var visible = false;
