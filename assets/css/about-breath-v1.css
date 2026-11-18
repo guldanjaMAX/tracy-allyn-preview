@@ -28,6 +28,7 @@
   opacity: 1;
 }
 .hp-about-breath .hp-button {
+  margin-top: clamp(24px, 2cqw, 38px);
   min-height: 44px;
   padding: 1em 1.44em;
   gap: 2.2em;
